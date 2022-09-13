@@ -130,7 +130,7 @@
                 </ul>
             </div>
             <div class="col-4 d-flex justify-content-center align-items-center">
-                <img class="rounded" src="https://github.com/foreverfl/portfolio/blob/main/images/photo_dark.png?raw=true" id="photo_me" style="width:150px;">
+                <img class="rounded" src="./images/photo_dark.png" id="photo_me" style="width:150px;">
             </div>
         </div>
 
@@ -300,12 +300,12 @@
         const photoMe = document.querySelector('#photo_me');
 
         photoMe.addEventListener('mouseover', function () {
-            photoMe.setAttribute('src', '/images/photo.jpg');
+            photoMe.setAttribute('src', './images/photo.jpg');
             photoMe.style.boxShadow = '5px 5px 5px #000';
         });
 
         photoMe.addEventListener('mouseleave', function () {
-            photoMe.setAttribute('src', '/images/photo_dark.png');
+            photoMe.setAttribute('src', './images/photo_dark.png');
             photoMe.style.boxShadow = '15px 15px 15px #000';
         });
 
@@ -355,8 +355,8 @@
     addNounImageEvent();
     function addNounImageEvent() {
         const portfolioImageNouns = document.querySelectorAll('.portfolio_image_noun');
-        let pathLight = '/images/noun/light/'
-        let pathLightHover = '/images/noun/light_hover/'
+        let pathLight = './images/noun/light/'
+        let pathLightHover = './images/noun/light_hover/'
 
         for (let i = 0; i < portfolioImageNouns.length; i++) {
             const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
