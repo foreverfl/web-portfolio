@@ -38,6 +38,7 @@
         }
 
         body {
+            position: relative;
             font-family: 'basic';
             font-size: 30px;
         }
@@ -76,11 +77,13 @@
         /* navbar*/
         .navbar_fix {
             position: fixed;
+            z-index: 100000;
             width: 90%;
             top: 0px;
             margin: 0 auto;
             left: 0;
             right: 0;
+            background-color: white;
             animation: down 1s ease;
         }
 
@@ -187,16 +190,16 @@
                 <div class="portfolio_emphasis_font fw-bold my-3" data-detect="about">01. 자기소개</div>
                 <!-- mobile photo -->
                 <div class="d-md-none d-block d-flex justify-content-center my-5">
-                    <img class="rounded" src="./images/photo_dark.png" id="photo_me"
+                    <img class="portfolio_photo_me rounded" src="./images/photo_dark.png"
                         style="max-width:70%; height:auto;">
                 </div>
                 <pre data-detect="about_detail">  안녕하세요. 제 이름은 전명규라고 합니다. 저는 평소에 제가 하는 행위를 어떻게 하면 작업을 단순화시킬 수 있을지 고민을 많이 하는 편인데, 이런 성향 때문에 프로그래밍에 관심을 가지게 되었습니다. 현재는 백엔드 엔지니어지만 풀스택 엔지니어를 지향하고 있습니다.
-                    
-  저는 중앙대학교에서 영어영문학과 일어일문학을 전공했고 2년 동안 영어학원에서 강사로 일했습니다. 이후에 나라의 부름을 받아 공군 학사장교로 3년 3개월 동안 군복무를 수행하고, 프로그래밍에 흥미를 가지게 되어서 지금까지 이어오고 있습니다. 
+                        
+    저는 중앙대학교에서 영어영문학과 일어일문학을 전공했고 2년 동안 영어학원에서 강사로 일했습니다. 이후에 나라의 부름을 받아 공군 학사장교로 3년 3개월 동안 군복무를 수행하고, 프로그래밍에 흥미를 가지게 되어서 지금까지 이어오고 있습니다. 
 
-  현재는 국비지원 it교육을 수료하고, 개인적인 공부와 프로젝트를 진행 중에 있습니다.
+    현재는 국비지원 it교육을 수료하고, 개인적인 공부와 프로젝트를 진행 중에 있습니다.
 
-  제 기술 스택은 다음과 같습니다.</pre>
+    제 기술 스택은 다음과 같습니다.</pre>
                 <ul>
                     <li>MySQL</li>
                     <li>Java, Spring, SpringBoot, WordPress</li>
@@ -206,7 +209,8 @@
             </div>
             <!-- desktop photo -->
             <div class="d-md-block d-none col-md-4 d-flex justify-content-center align-items-center">
-                <img class="rounded" src="./images/photo_dark.png" id="photo_me" style="max-width:100%; height:auto;">
+                <img class="portfolio_photo_me rounded" src="./images/photo_dark.png"
+                    style="max-width:100%; height:auto;">
             </div>
         </div>
 
@@ -221,137 +225,138 @@
                 <div class="col portfolio_experience_title my-3" type="button" id="btn_messi">
                     Messi
                 </div>
-                <!-- desktop list -->
-                <div class="d-md-block d-none col-md-3 align-self-center ps-4" style="font-size:20px;">
-                    <div class="fw-bold" data-detect="development">개발직</div>
-                    <hr style="width:60%">
-                    <div class="fw-bold" data-detect="not_development">비개발직</div>
-                    <div class="portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf">
-                        대한민국 공군
+            </div>
+            <!-- desktop list -->
+            <div class="d-md-block d-none col-md-3 align-self-center ps-4" style="font-size:20px;">
+                <div class="fw-bold" data-detect="development">개발직</div>
+                <hr style="width:60%">
+                <div class="fw-bold" data-detect="not_development">비개발직</div>
+                <div class="portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf">
+                    대한민국 공군
+                </div>
+                <div class="portfolio_experience_title my-3" type="button" id="btn_messi">
+                    Messi
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <!-- rokaf -->
+                <div class="portfolio_experience" id="rokaf">
+                    <!-- title -->
+                    <div class="fw-bold">
+                        <span data-detect="rokaf_career">기지중대장/작전통제장교</span>&nbsp;<span class="text-primary"
+                            data-detect="rokaf_at">@ 대한민국 공군</span>
                     </div>
-                    <div class="portfolio_experience_title my-3" type="button" id="btn_messi">
-                        Messi
-                    </div>
+                    <!-- period -->
+                    <div class="text-secondary" style="font-size: 20px;">2018. 3 ~ 2021. 5</div>
+                    <!-- work -->
+                    <ul>
+                        <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_1">부대의 총기탄약,
+                            부대보급 등
+                            전반적인 관리</li>
+                        <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_2">다수의 병력 관리
+                        </li>
+                        <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_3">교대근무를 진행하며
+                            포대와
+                            사령부에서의 중간 다리역할 수행</li>
+                    </ul>
                 </div>
 
-                <div class="col-md-9">
-                    <!-- rokaf -->
-                    <div class="portfolio_experience" id="rokaf">
-                        <!-- title -->
-                        <div class="fw-bold">
-                            <span data-detect="rokaf_career">기지중대장/작전통제장교</span>&nbsp;<span class="text-primary"
-                                data-detect="rokaf_at">@ 대한민국 공군</span>
-                        </div>
-                        <!-- period -->
-                        <div class="text-secondary" style="font-size: 20px;">2018. 3 ~ 2021. 5</div>
-                        <!-- work -->
-                        <ul>
-                            <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_1">부대의 총기탄약,
-                                부대보급 등
-                                전반적인 관리</li>
-                            <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_2">다수의 병력 관리
-                            </li>
-                            <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_3">교대근무를 진행하며
-                                포대와
-                                사령부에서의 중간 다리역할 수행</li>
-                        </ul>
+                <!-- messi -->
+                <div class="portfolio_experience" id="messi" style="display:none">
+                    <!-- title -->
+                    <div class="fw-bold">
+                        <span data-detect="messi_career">전임강사</span>&nbsp;<span class="text-primary"
+                            data-detect="messi_at">@ Messi</span>
                     </div>
+                    <!-- period -->
+                    <div class="text-secondary" style="font-size: 20px;">2016. 3 ~ 2018. 2</div>
+                    <!-- work -->
+                    <ul>
+                        <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_1">내신/수능/텝스 등의
+                            다수의
+                            영어 강의</li>
+                        <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_2">수업 전 강의 계획 수립
+                        </li>
+                        <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_3">수업을 위한 자체 교재
+                            및 자료
+                            제작</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-                    <!-- messi -->
-                    <div class="portfolio_experience" id="messi" style="display:none">
-                        <!-- title -->
-                        <div class="fw-bold">
-                            <span data-detect="messi_career">전임강사</span>&nbsp;<span class="text-primary"
-                                data-detect="messi_at">@ Messi</span>
-                        </div>
-                        <!-- period -->
-                        <div class="text-secondary" style="font-size: 20px;">2016. 3 ~ 2018. 2</div>
-                        <!-- work -->
-                        <ul>
-                            <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_1">내신/수능/텝스 등의
-                                다수의
-                                영어 강의</li>
-                            <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_2">수업 전 강의 계획 수립
-                            </li>
-                            <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_3">수업을 위한 자체 교재
-                                및 자료
-                                제작</li>
-                        </ul>
+
+        <!-- 3. work -->
+        <div class="portfolio_section row" id="03_work">
+            <div class="portfolio_emphasis_font fw-bold my-3" data-detect="work">03. 프로젝트</div>
+            <!-- My Dictionary -->
+            <div class="portfolio_subsection row">
+                <!-- desktop photo -->
+                <div class="d-md-block d-none col-md-7 d-flex justify-content-center align-items-center">
+                    <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
+                        data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
+                </div>
+                <div class="col-md-5">
+                    <div class="text-md-end text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
+                    <div class="portfolio_emphasis_font_small text-md-end text-start">My Dictionary</div>
+                    <!-- mobile photo -->
+                    <div class="d-md-none d-block">
+                        <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
+                            data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
+                    </div>
+                    <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_dictionary"> 구글
+                        확장프로그램(extension)을 통해 사전 사이트에서 단어를
+                        해당 사이트에
+                        저장한 후 테스트를 통해 학습하는 웹사이트입니다. 차후에 앱 버전 개발 예정입니다.
+                    </div>
+                    <div style="font-size: 20px;">
+                        <span class="border rounded">MySQL</span>&nbsp;
+                        <span class="border rounded">SpringBoot</span>&nbsp;
+                        <span class="border rounded">Thymeleaf</span>&nbsp;
+                        <span class="border rounded">HTML/CSS</span>&nbsp;
+                        <span class="border rounded">JavaScript</span>&nbsp;
+                        <span class="border rounded">Bootstrap</span>&nbsp;
+                    </div>
+                    <div class="text-end">
+                        <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
+                                    width="30px"></a></span>&nbsp;
+                        <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/external_link.png"
+                                    width="30px"></a></span>&nbsp;
                     </div>
                 </div>
             </div>
 
-            <!-- 3. work -->
-            <div class="portfolio_section row" id="03_work">
-                <div class="portfolio_emphasis_font fw-bold my-3" data-detect="work">03. 프로젝트</div>
-                <!-- My Dictionary -->
-                <div class="portfolio_subsection row">
-                    <!-- desktop photo -->
-                    <div class="d-md-block d-none col-md-7 d-flex justify-content-center align-items-center">
-                        <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
-                            data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
-                    </div>
-                    <div class="col-md-5">
-                        <div class="text-md-end text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
-                        <div class="portfolio_emphasis_font_small text-md-end text-start">My Dictionary</div>
-                        <!-- mobile photo -->
-                        <div class="d-md-none d-block">
-                            <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
-                                data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
-                        </div>
-                        <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_dictionary"> 구글
-                            확장프로그램(extension)을 통해 사전 사이트에서 단어를
-                            해당 사이트에
-                            저장한 후 테스트를 통해 학습하는 웹사이트입니다. 차후에 앱 버전 개발 예정입니다.
-                        </div>
-                        <div style="font-size: 20px;">
-                            <span class="border rounded">MySQL</span>&nbsp;
-                            <span class="border rounded">SpringBoot</span>&nbsp;
-                            <span class="border rounded">Thymeleaf</span>&nbsp;
-                            <span class="border rounded">HTML/CSS</span>&nbsp;
-                            <span class="border rounded">JavaScript</span>&nbsp;
-                            <span class="border rounded">Bootstrap</span>&nbsp;
-                        </div>
-                        <div class="text-end">
-                            <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
-                                        width="30px"></a></span>&nbsp;
-                            <span><a href="#"><img class="portfolio_image_noun"
-                                        src="./images/noun/light/external_link.png" width="30px"></a></span>&nbsp;
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MyTube-->
-                <div class="portfolio_subsection row">
-                    <div class="col-md-5">
-                        <div class="text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
-                        <div class="portfolio_emphasis_font_small text-start">MyTube</div>
-                        <!-- mobile photo -->
-                        <div class="d-md-none d-block">
-                            <img class="portfolio_image_project border rounded" src="./images/project/my_tube.png"
-                                data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
-                        </div>
-                        <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_tube"> 유튜브 형태의 뷰에
-                            간단한
-                            로그인 기능을 추가했습니다.</div>
-                        <div style="font-size: 20px;">
-                            <span class="border rounded">Oracle</span>&nbsp;
-                            <span class="border rounded">Spring</span>&nbsp;
-                            <span class="border rounded">JSP</span>&nbsp;
-                            <span class="border rounded">HTML/CSS</span>&nbsp;
-                            <span class="border rounded">JavaScript</span>&nbsp;
-                            <span class="border rounded">Bootstrap</span>&nbsp;
-                        </div>
-                        <div class="text-md-start text-end">
-                            <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
-                                        width="30px"></a></span>&nbsp;
-                        </div>
-                    </div>
-                    <!-- desktop photo -->
-                    <div class="d-none d-md-block col-md-7 d-flex justify-content-center align-items-center">
+            <!-- MyTube-->
+            <div class="portfolio_subsection row">
+                <div class="col-md-5">
+                    <div class="text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
+                    <div class="portfolio_emphasis_font_small text-start">MyTube</div>
+                    <!-- mobile photo -->
+                    <div class="d-md-none d-block">
                         <img class="portfolio_image_project border rounded" src="./images/project/my_tube.png"
                             data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
                     </div>
+                    <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_tube"> 유튜브 형태의 뷰에
+                        간단한
+                        로그인 기능을 추가했습니다.</div>
+                    <div style="font-size: 20px;">
+                        <span class="border rounded">Oracle</span>&nbsp;
+                        <span class="border rounded">Spring</span>&nbsp;
+                        <span class="border rounded">JSP</span>&nbsp;
+                        <span class="border rounded">HTML/CSS</span>&nbsp;
+                        <span class="border rounded">JavaScript</span>&nbsp;
+                        <span class="border rounded">Bootstrap</span>&nbsp;
+                    </div>
+                    <div class="text-md-start text-end">
+                        <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
+                                    width="30px"></a></span>&nbsp;
+                    </div>
+                </div>
+                <!-- desktop photo -->
+                <div class="d-none d-md-block col-md-7 d-flex justify-content-center align-items-center">
+                    <img class="portfolio_image_project border rounded" src="./images/project/my_tube.png"
+                        data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
                 </div>
             </div>
         </div>
@@ -385,82 +390,8 @@
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
 <script type="text/javascript" src="./js/i18n.js"></script>
+<script type="text/javascript" src="./js/convertTheme.js"></script>
 <script>
-    // dark mode
-    getMode();
-    function getMode() {
-
-        const btnDarkMode = document.querySelector('#btn_dark_mode');
-        const mode = localStorage.getItem('mode');
-
-        if (mode === 'dark') {
-            btnDarkMode.setAttribute('checked', 'true');
-            toDarkTheme();
-        } else {
-            btnDarkMode.removeAttribute('checked');
-            toLightTheme();
-        }
-    }
-
-    selectMode();
-    function selectMode() {
-
-        const btnDarkMode = document.querySelector('#btn_dark_mode');
-        btnDarkMode.addEventListener('change', function (event) {
-
-            if (event.target.checked) {
-                localStorage.setItem('mode', 'dark');
-                toDarkTheme();
-            } else {
-                localStorage.setItem('mode', 'light');
-                toLightTheme();
-            }
-        });
-    };
-
-    function toDarkTheme() {
-
-        let body = document.querySelector('body');
-        let portfolioNavContents = document.querySelectorAll('.portfolio_nav_content');
-        let portfolioImageNouns = document.querySelectorAll('.portfolio_image_noun');
-
-        body.style.backgroundColor = '#181818';
-        body.style.color = 'white';
-
-        for (let i = 0; i < portfolioNavContents.length; i++) {
-            portfolioNavContents[i].classList.replace('text-dark', 'text-light');
-        }
-
-        const path_dark = './images/noun/dark/'
-        for (let i = 0; i < portfolioImageNouns.length; i++) {
-
-            const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
-            const fileName_2 = fileName_1[fileName_1.length - 1];
-            portfolioImageNouns[i].setAttribute('src', path_dark + fileName_2);
-        }
-    }
-
-    function toLightTheme() {
-
-        let body = document.querySelector('body');
-        let portfolioNavContents = document.querySelectorAll('.portfolio_nav_content');
-        let portfolioImageNouns = document.querySelectorAll('.portfolio_image_noun');
-
-        body.style.backgroundColor = 'white';
-        body.style.color = '#181818';
-        for (let i = 0; i < portfolioNavContents.length; i++) {
-            portfolioNavContents[i].classList.replace('text-light', 'text-dark');
-        }
-
-        const path_light = './images/noun/light/'
-        for (let i = 0; i < portfolioImageNouns.length; i++) {
-
-            const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
-            const fileName_2 = fileName_1[fileName_1.length - 1];
-            portfolioImageNouns[i].setAttribute('src', path_light + fileName_2);
-        }
-    }
-
     addNavbarEvent();
     function addNavbarEvent() {
         const header = document.querySelector('header');
@@ -471,10 +402,14 @@
             let st = window.pageYOffset || document.documentElement.scrollTop;
             if (st > lastScrollTop) {
                 // down
+
                 header.classList.remove('navbar_fix');
+
+
             } else {
                 // up
                 header.classList.add('navbar_fix');
+
             }
             lastScrollTop = st <= 100 ? 100 : st; // for mobile or negative scrolling
         }, false);
@@ -500,18 +435,25 @@
 
     addProfilePhotoEvent();
     function addProfilePhotoEvent() {
-        const photoMe = document.querySelector('#photo_me');
+        let portfolioPhotoMes = document.querySelectorAll('.portfolio_photo_me');
 
-        photoMe.addEventListener('mouseover', function () {
-            photoMe.setAttribute('src', './images/photo.png');
-            photoMe.style.boxShadow = '5px 5px 5px #000';
-        });
+        for (let i = 0; i < portfolioPhotoMes.length; i++) {
 
-        photoMe.addEventListener('mouseleave', function () {
-            photoMe.setAttribute('src', './images/photo_dark.png');
-            photoMe.style.boxShadow = '15px 15px 15px #000';
-        });
+            (function (x) {
+                portfolioPhotoMes[x].addEventListener('mouseover', function () {
+                    portfolioPhotoMes[x].setAttribute('src', './images/photo.png');
+                    portfolioPhotoMes[x].style.boxShadow = '5px 5px 5px #000';
+                });
 
+                portfolioPhotoMes[x].addEventListener('mouseleave', function () {
+                    portfolioPhotoMes[x].setAttribute('src', './images/photo_dark.png');
+                    portfolioPhotoMes[x].style.boxShadow = '15px 15px 15px #000';
+                });
+            })(i);
+
+
+
+        }
     }
 
     addExperienceEvent();
