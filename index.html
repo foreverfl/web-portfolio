@@ -75,7 +75,6 @@
 
         /* navbar*/
         .navbar_fix {
-            display: block;
             position: fixed;
             width: 90%;
             top: 0px;
@@ -85,7 +84,7 @@
             animation: down 1s ease;
         }
 
-          @keyframes down {
+        @keyframes down {
             0% {
                 transform: translateY(-50px)
             }
@@ -121,6 +120,15 @@
             position: sticky;
             left: 20px;
             bottom: 20px;
+        }
+
+        @media(max-width:576px) {
+            #sidebar {
+                width: auto;
+                position: relative;
+                left: auto;
+                bottom: auto;
+            }
         }
     </style>
     <title>portfolio</title>
@@ -175,8 +183,13 @@
 
         <!-- 1. about -->
         <div class="portfolio_section row" id="01_about">
-            <div class="col-8">
+            <div class="col-md-8">
                 <div class="portfolio_emphasis_font fw-bold my-3" data-detect="about">01. 자기소개</div>
+                <!-- mobile photo -->
+                <div class="d-md-none d-block d-flex justify-content-center my-5">
+                    <img class="rounded" src="./images/photo_dark.png" id="photo_me"
+                        style="max-width:70%; height:auto;">
+                </div>
                 <pre data-detect="about_detail">  안녕하세요. 제 이름은 전명규라고 합니다. 저는 평소에 제가 하는 행위를 어떻게 하면 작업을 단순화시킬 수 있을지 고민을 많이 하는 편인데, 이런 성향 때문에 프로그래밍에 관심을 가지게 되었습니다. 현재는 백엔드 엔지니어지만 풀스택 엔지니어를 지향하고 있습니다.
                     
   저는 중앙대학교에서 영어영문학과 일어일문학을 전공했고 2년 동안 영어학원에서 강사로 일했습니다. 이후에 나라의 부름을 받아 공군 학사장교로 3년 3개월 동안 군복무를 수행하고, 프로그래밍에 흥미를 가지게 되어서 지금까지 이어오고 있습니다. 
@@ -191,7 +204,8 @@
                     <li>AWS, Docker</li>
                 </ul>
             </div>
-            <div class="col-4 d-flex justify-content-center align-items-center">
+            <!-- desktop photo -->
+            <div class="d-md-block d-none col-md-4 d-flex justify-content-center align-items-center">
                 <img class="rounded" src="./images/photo_dark.png" id="photo_me" style="max-width:100%; height:auto;">
             </div>
         </div>
@@ -199,131 +213,157 @@
         <!-- 2. experience -->
         <div class="portfolio_section row" id="02_experience">
             <div class="portfolio_emphasis_font fw-bold my-3" data-detect="experience">02. 경력사항</div>
-            <div class="col-3 align-self-center ps-4" style="font-size:20px;">
-
-                <div class="fw-bold" data-detect="development">개발직</div>
-                <hr style="width:60%">
-                <div class="fw-bold" data-detect="not_development">비개발직</div>
-                <div class="portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf">
+            <!-- mobile list -->
+            <div class="d-block d-md-none row ps-4" style="font-size:20px;">
+                <div class="col portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf">
                     대한민국 공군
                 </div>
-                <div class="portfolio_experience_title my-3" type="button" id="btn_messi">
+                <div class="col portfolio_experience_title my-3" type="button" id="btn_messi">
                     Messi
-
                 </div>
-            </div>
-
-            <div class="col-9">
-                <!-- rokaf -->
-                <div class="portfolio_experience" id="rokaf">
-                    <!-- title -->
-                    <div class="fw-bold">
-                        <span data-detect="rokaf_career">기지중대장/작전통제장교</span>&nbsp;<span class="text-primary"
-                            data-detect="rokaf_at">@ 대한민국 공군</span>
+                <!-- desktop list -->
+                <div class="d-md-block d-none col-md-3 align-self-center ps-4" style="font-size:20px;">
+                    <div class="fw-bold" data-detect="development">개발직</div>
+                    <hr style="width:60%">
+                    <div class="fw-bold" data-detect="not_development">비개발직</div>
+                    <div class="portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf">
+                        대한민국 공군
                     </div>
-                    <!-- period -->
-                    <div class="text-secondary" style="font-size: 20px;">2018. 3 ~ 2021. 5</div>
-                    <!-- work -->
-                    <ul>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_1">부대의 총기탄약, 부대보급 등
-                            전반적인 관리</li>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_2">다수의 병력 관리</li>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_3">교대근무를 진행하며 포대와
-                            사령부에서의 중간 다리역할 수행</li>
-                    </ul>
+                    <div class="portfolio_experience_title my-3" type="button" id="btn_messi">
+                        Messi
+                    </div>
                 </div>
 
-                <!-- messi -->
-                <div class="portfolio_experience" id="messi" style="display:none">
-                    <!-- title -->
-                    <div class="fw-bold">
-                        <span data-detect="messi_career">전임강사</span>&nbsp;<span class="text-primary"
-                            data-detect="messi_at">@ Messi</span>
+                <div class="col-md-9">
+                    <!-- rokaf -->
+                    <div class="portfolio_experience" id="rokaf">
+                        <!-- title -->
+                        <div class="fw-bold">
+                            <span data-detect="rokaf_career">기지중대장/작전통제장교</span>&nbsp;<span class="text-primary"
+                                data-detect="rokaf_at">@ 대한민국 공군</span>
+                        </div>
+                        <!-- period -->
+                        <div class="text-secondary" style="font-size: 20px;">2018. 3 ~ 2021. 5</div>
+                        <!-- work -->
+                        <ul>
+                            <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_1">부대의 총기탄약,
+                                부대보급 등
+                                전반적인 관리</li>
+                            <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_2">다수의 병력 관리
+                            </li>
+                            <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_3">교대근무를 진행하며
+                                포대와
+                                사령부에서의 중간 다리역할 수행</li>
+                        </ul>
                     </div>
-                    <!-- period -->
-                    <div class="text-secondary" style="font-size: 20px;">2016. 3 ~ 2018. 2</div>
-                    <!-- work -->
-                    <ul>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_1">내신/수능/텝스 등의 다수의
-                            영어 강의</li>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_2">수업 전 강의 계획 수립
-                        </li>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_3">수업을 위한 자체 교재 및 자료
-                            제작</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
 
-        <!-- 3. work -->
-        <div class="portfolio_section row" id="03_work">
-            <div class="portfolio_emphasis_font fw-bold my-3" data-detect="work">03. 프로젝트</div>
-            <!-- My Dictionary -->
-            <div class="portfolio_subsection row">
-                <div class="col-7 d-flex justify-content-center align-items-center">
-                    <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
-                        data-bs-toggle="modal" data-bs-target="#modal" style="width: 600px; max-width: 100%">
-                </div>
-                <div class="col-5">
-                    <div class="text-end" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
-                    <div class="portfolio_emphasis_font_small text-end">My Dictionary</div>
-                    <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_dictionary"> 구글
-                        확장프로그램(extension)을 통해 사전 사이트에서 단어를
-                        해당 사이트에
-                        저장한 후 테스트를 통해 학습하는 웹사이트입니다. 차후에 앱 버전 개발 예정입니다.
-                    </div>
-                    <div style="font-size: 20px;">
-                        <span class="border rounded">MySQL</span>&nbsp;
-                        <span class="border rounded">SpringBoot</span>&nbsp;
-                        <span class="border rounded">Thymeleaf</span>&nbsp;
-                        <span class="border rounded">HTML/CSS</span>&nbsp;
-                        <span class="border rounded">JavaScript</span>&nbsp;
-                        <span class="border rounded">Bootstrap</span>&nbsp;
-                    </div>
-                    <div class="text-end">
-                        <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
-                                    width="30px"></a></span>&nbsp;
-                        <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/external_link.png"
-                                    width="30px"></a></span>&nbsp;
+                    <!-- messi -->
+                    <div class="portfolio_experience" id="messi" style="display:none">
+                        <!-- title -->
+                        <div class="fw-bold">
+                            <span data-detect="messi_career">전임강사</span>&nbsp;<span class="text-primary"
+                                data-detect="messi_at">@ Messi</span>
+                        </div>
+                        <!-- period -->
+                        <div class="text-secondary" style="font-size: 20px;">2016. 3 ~ 2018. 2</div>
+                        <!-- work -->
+                        <ul>
+                            <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_1">내신/수능/텝스 등의
+                                다수의
+                                영어 강의</li>
+                            <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_2">수업 전 강의 계획 수립
+                            </li>
+                            <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_3">수업을 위한 자체 교재
+                                및 자료
+                                제작</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- MyTube-->
-            <div class="portfolio_subsection row">
-                <div class="col-5">
-                    <div class="text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
-                    <div class="portfolio_emphasis_font_small text-start">MyTube</div>
-                    <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_tube"> 유튜브 형태의 뷰에 간단한
-                        로그인 기능을 추가했습니다.</div>
-                    <div style="font-size: 20px;">
-                        <span class="border rounded">Oracle</span>&nbsp;
-                        <span class="border rounded">Spring</span>&nbsp;
-                        <span class="border rounded">JSP</span>&nbsp;
-                        <span class="border rounded">HTML/CSS</span>&nbsp;
-                        <span class="border rounded">JavaScript</span>&nbsp;
-                        <span class="border rounded">Bootstrap</span>&nbsp;
+            <!-- 3. work -->
+            <div class="portfolio_section row" id="03_work">
+                <div class="portfolio_emphasis_font fw-bold my-3" data-detect="work">03. 프로젝트</div>
+                <!-- My Dictionary -->
+                <div class="portfolio_subsection row">
+                    <!-- desktop photo -->
+                    <div class="d-md-block d-none col-md-7 d-flex justify-content-center align-items-center">
+                        <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
+                            data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
                     </div>
-                    <div class="text-start">
-                        <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
-                                    width="30px"></a></span>&nbsp;
+                    <div class="col-md-5">
+                        <div class="text-md-end text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
+                        <div class="portfolio_emphasis_font_small text-md-end text-start">My Dictionary</div>
+                        <!-- mobile photo -->
+                        <div class="d-md-none d-block">
+                            <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
+                                data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
+                        </div>
+                        <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_dictionary"> 구글
+                            확장프로그램(extension)을 통해 사전 사이트에서 단어를
+                            해당 사이트에
+                            저장한 후 테스트를 통해 학습하는 웹사이트입니다. 차후에 앱 버전 개발 예정입니다.
+                        </div>
+                        <div style="font-size: 20px;">
+                            <span class="border rounded">MySQL</span>&nbsp;
+                            <span class="border rounded">SpringBoot</span>&nbsp;
+                            <span class="border rounded">Thymeleaf</span>&nbsp;
+                            <span class="border rounded">HTML/CSS</span>&nbsp;
+                            <span class="border rounded">JavaScript</span>&nbsp;
+                            <span class="border rounded">Bootstrap</span>&nbsp;
+                        </div>
+                        <div class="text-end">
+                            <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
+                                        width="30px"></a></span>&nbsp;
+                            <span><a href="#"><img class="portfolio_image_noun"
+                                        src="./images/noun/light/external_link.png" width="30px"></a></span>&nbsp;
+                        </div>
                     </div>
                 </div>
-                <div class="col-7 d-flex justify-content-center align-items-center">
-                    <img class="portfolio_image_project border rounded" src="./images/project/my_tube.png"
-                        data-bs-toggle="modal" data-bs-target="#modal" style="width: 600px; max-width: 100%">
+
+                <!-- MyTube-->
+                <div class="portfolio_subsection row">
+                    <div class="col-md-5">
+                        <div class="text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
+                        <div class="portfolio_emphasis_font_small text-start">MyTube</div>
+                        <!-- mobile photo -->
+                        <div class="d-md-none d-block">
+                            <img class="portfolio_image_project border rounded" src="./images/project/my_tube.png"
+                                data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
+                        </div>
+                        <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_tube"> 유튜브 형태의 뷰에
+                            간단한
+                            로그인 기능을 추가했습니다.</div>
+                        <div style="font-size: 20px;">
+                            <span class="border rounded">Oracle</span>&nbsp;
+                            <span class="border rounded">Spring</span>&nbsp;
+                            <span class="border rounded">JSP</span>&nbsp;
+                            <span class="border rounded">HTML/CSS</span>&nbsp;
+                            <span class="border rounded">JavaScript</span>&nbsp;
+                            <span class="border rounded">Bootstrap</span>&nbsp;
+                        </div>
+                        <div class="text-md-start text-end">
+                            <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
+                                        width="30px"></a></span>&nbsp;
+                        </div>
+                    </div>
+                    <!-- desktop photo -->
+                    <div class="d-none d-md-block col-md-7 d-flex justify-content-center align-items-center">
+                        <img class="portfolio_image_project border rounded" src="./images/project/my_tube.png"
+                            data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- sidebar -->
-    <div class="d-flex flex-column" id="sidebar">
-        <a class="py-2" href="https://github.com/foreverfl" target="_blank"><img class="portfolio_image_noun"
+    <div class="d-md-flex flex-md-column d-flex flex-row justify-content-center mb-3" id="sidebar">
+        <a class="py-md-2 mx-3" href="https://github.com/foreverfl" target="_blank"><img class="portfolio_image_noun"
                 src="./images/noun/light/github.png" style="width: 30px"></a>
-        <a class="py-2" href="https://www.instagram.com/foreverfl/" target="_blank"><img class="portfolio_image_noun"
-                src="./images/noun/light/insta.png" style="width: 30px"></a>
-        <a class="py-2" href="http://tarotaro90.com/" target="_blank"><img class="portfolio_image_noun"
+        <a class="py-md-2 mx-3" href="https://www.instagram.com/foreverfl/" target="_blank"><img
+                class="portfolio_image_noun" src="./images/noun/light/insta.png" style="width: 30px"></a>
+        <a class="py-md-2 mx-3" href="http://tarotaro90.com/" target="_blank"><img class="portfolio_image_noun"
                 src="./images/noun/light/wordpress.png" style="width: 30px"></a>
     </div>
 
@@ -334,7 +374,8 @@
 
     <!-- Modal -->
     <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true" style="cursor: pointer;">
-        <div class="modal-dialog modal-dialog-centered modal-fullscreen d-flex justify-content-center align-items-center">
+        <div
+            class="modal-dialog modal-dialog-centered modal-fullscreen d-flex justify-content-center align-items-center">
         </div>
     </div>
 
@@ -429,11 +470,9 @@
         window.addEventListener("scroll", function () {
             let st = window.pageYOffset || document.documentElement.scrollTop;
             if (st > lastScrollTop) {
-                console.log(st);
                 // down
                 header.classList.remove('navbar_fix');
             } else {
-                console.log(st);
                 // up
                 header.classList.add('navbar_fix');
             }
