@@ -8,6 +8,8 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- favicon -->
+    <link rel="favicon" href="./favicon.ico">
     <style>
         @font-face {
             font-family: 'basic';
@@ -34,7 +36,6 @@
                 U+309D, U+309E, U+30A1-30FA, U+30FC,
                 U+4E00-9FEA, U+3400-4DB5, U+FF5E, U+F900-FA6D;
         }
-
 
         body {
             font-family: 'basic';
@@ -72,15 +73,49 @@
             margin-bottom: 100px;
         }
 
+        /* navbar*/
+        .navbar_fix {
+            display: block;
+            position: fixed;
+            width: 90%;
+            top: 0px;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            animation: down 1s ease;
+        }
+
+          @keyframes down {
+            0% {
+                transform: translateY(-50px)
+            }
+
+            100% {
+                transform: translateY(0px)
+            }
+        }
+
         .dropdown-menu {
             min-width: 80px;
             margin-left: -50px;
+            cursor: pointer;
         }
 
+        /* body */
         #photo_me {
             box-shadow: 15px 15px 15px #000;
         }
 
+        .portfolio_experience_title:hover {
+            background-color: rgb(219, 219, 219);
+            cursor: pointer;
+        }
+
+        .portfolio_image_project {
+            cursor: pointer;
+        }
+
+        /* sidebar */
         #sidebar {
             width: 50px;
             position: sticky;
@@ -93,9 +128,9 @@
 
 <body>
     <!-- header -->
-    <div class="container-fluid">
+    <div class="container-fluid" id="navbar">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <a href="/" class="d-flex align-items-center mb-3 me-auto text-dark text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
@@ -127,7 +162,7 @@
         </header>
     </div>
 
-    <div class="container">
+    <div class="container" id="main">
         <!-- 0. experience -->
         <div class="portfolio_section row">
             <div data-detect="my_name">제 이름은</div>
@@ -141,7 +176,7 @@
         <!-- 1. about -->
         <div class="portfolio_section row" id="01_about">
             <div class="col-8">
-                <div class="portfolio_emphasis_font fw-bold" data-detect="about">01. 자기소개</div>
+                <div class="portfolio_emphasis_font fw-bold my-3" data-detect="about">01. 자기소개</div>
                 <pre data-detect="about_detail">  안녕하세요. 제 이름은 전명규라고 합니다. 저는 평소에 제가 하는 행위를 어떻게 하면 작업을 단순화시킬 수 있을지 고민을 많이 하는 편인데, 이런 성향 때문에 프로그래밍에 관심을 가지게 되었습니다. 현재는 백엔드 엔지니어지만 풀스택 엔지니어를 지향하고 있습니다.
                     
   저는 중앙대학교에서 영어영문학과 일어일문학을 전공했고 2년 동안 영어학원에서 강사로 일했습니다. 이후에 나라의 부름을 받아 공군 학사장교로 3년 3개월 동안 군복무를 수행하고, 프로그래밍에 흥미를 가지게 되어서 지금까지 이어오고 있습니다. 
@@ -157,26 +192,28 @@
                 </ul>
             </div>
             <div class="col-4 d-flex justify-content-center align-items-center">
-                <img class="rounded" src="./images/photo_dark.png" id="photo_me" style="width:150px;">
+                <img class="rounded" src="./images/photo_dark.png" id="photo_me" style="max-width:100%; height:auto;">
             </div>
         </div>
 
         <!-- 2. experience -->
         <div class="portfolio_section row" id="02_experience">
-            <div class="portfolio_emphasis_font fw-bold" data-detect="experience">02. 경력사항</div>
-            <div class="col-2" style="font-size:20px;">
+            <div class="portfolio_emphasis_font fw-bold my-3" data-detect="experience">02. 경력사항</div>
+            <div class="col-3 align-self-center ps-4" style="font-size:20px;">
+
                 <div class="fw-bold" data-detect="development">개발직</div>
-                <hr>
+                <hr style="width:60%">
                 <div class="fw-bold" data-detect="not_development">비개발직</div>
-                <div class="d-grid gap-2">
-                    <button class="btn btn-light text-start" id="btn_rokaf" data-detect="rokaf">대한민국 공군</button>
+                <div class="portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf">
+                    대한민국 공군
                 </div>
-                <div class="d-grid gap-2">
-                    <button class="btn btn-light text-start" id="btn_messi">Messi</button>
+                <div class="portfolio_experience_title my-3" type="button" id="btn_messi">
+                    Messi
+
                 </div>
             </div>
 
-            <div class="col-10">
+            <div class="col-9">
                 <!-- rokaf -->
                 <div class="portfolio_experience" id="rokaf">
                     <!-- title -->
@@ -220,7 +257,7 @@
 
         <!-- 3. work -->
         <div class="portfolio_section row" id="03_work">
-            <div class="portfolio_emphasis_font fw-bold" data-detect="work">03. 프로젝트</div>
+            <div class="portfolio_emphasis_font fw-bold my-3" data-detect="work">03. 프로젝트</div>
             <!-- My Dictionary -->
             <div class="portfolio_subsection row">
                 <div class="col-7 d-flex justify-content-center align-items-center">
@@ -296,11 +333,8 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-fullscreen p-3">
-            <div class="modal-content">
-
-            </div>
+    <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true" style="cursor: pointer;">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen d-flex justify-content-center align-items-center">
         </div>
     </div>
 
@@ -309,266 +343,102 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
+<script type="text/javascript" src="./js/i18n.js"></script>
 <script>
-    // language source
-    const languages = {
-        "en": {
-            en: "English",
-            ja: "Japanese",
-            ko: "Koean",
-            my_name: "My name is",
-            myeongkyu: "Myeongkyu Jeon",
-            summary: "I am a backend engineer who majored in English Language & Literature. Currently I am searching a job.",
-            resume: "My resume is here.",
-            about: "01. About Me",
-            about_detail: "  Hello. My name is Myeongkyu Jeon. I usually agonize about how I can simplify what I do and this tendency has made me be interested in programming. Currently, I am a back-end engineer, but I hope to be a full-stack engineer.\n\n  I majored in English/Japanese Language & Literature in ChungAng University and worked as an English educator for 2 years. After that, I had a military service as an Korea Air Force's officer for 3 years and 3 months. During serving in a military service, I came to be interested in programming and I have been doing programming.\n\n  Currently, I went through national IT education program, and I have been studying and doing my own project. My tech stack is like this.",
-            experience: "02. Where I've Worked",
-            development: "development",
-            not_development: "non-development",
-            rokaf: "ROKAF",
-            rokaf_career: "Operation Control Officer",
-            rokaf_at: "@ ROKAF",
-            rokaf_work_1: "Overally managed company such as gun&ammunition, supply and so on.",
-            rokaf_work_2: "Managed the troop.",
-            rokaf_work_3: "Mediated between an artillery unit and headquarters through shiftwork.",
-            messi_career: "Educator",
-            messi_at: "@ Messi",
-            messi_work_1: "Lectured on English for English evaluation test in Korea.",
-            messi_work_2: "Made a plan before a lecture.",
-            messi_work_3: "Made teaching materials for a lecture.",
-            work: "03. Some Things I’ve Built",
-            work_solo: "Personal Project",
-            work_team: "Team Project",
-            my_dictionary: "  It is a website saving words' entry and meaning to this website from dictionary sites through the chrome extension. Afterwards, I plan to make a development of app version of this website.",
-            my_tube: "  It is in the form of youtube, added simple login function.",
-        },
+    // dark mode
+    getMode();
+    function getMode() {
 
-        "ja": {
-            en: "英語",
-            ja: "日本語",
-            ko: "韓国語",
-            my_name: "私の名前は",
-            myeongkyu: "「ミョンギュウ」です。",
-            summary: "私は英語英学を専攻したバックエンドエンジニアであります。今は求職しています。",
-            resume: "履歴書はここをクリックしてください。",
-            about: "01. 自己紹介",
-            about_detail: "  初めまして。私は全銘揆(ジョンミョンギュウ)と申します。私は普段どうすれば私の作業を単純化させるかを悩みます。私のこんな性格のため、私はプログラミングに関心を持つようになりました。今はバックエンドエンジニアですけど、いつかプルスタックエンジニアになることを希望しています。\n\n  私は韓国の中央大学で英語英文学と日語日文学を専攻し、そのあと2年間英語の塾で教師として働きました。そして国の呼びに応じて空軍の士官として3年間韓国の軍隊で働きました。途中でプログラミングに興味を持たされ、今までプログラミンをしています。\n\n  今は国で実施するIT教育を終え、個人的な勉強とプロジェクトの進行中にいます。私の技術スタックは次のとおりです。",
-            experience: "02. 経歴事項",
-            development: "開発職",
-            not_development: "非開発職",
-            rokaf: "ROKAF",
-            rokaf_career: "基地中隊長/作戦統制将校",
-            rokaf_at: "@ ROKAF",
-            rokaf_work_1: "部隊の銃器弾薬、部隊の補給等の全般的な管理",
-            rokaf_work_2: "多数の兵力管理",
-            rokaf_work_3: "シフト勤務をしながら、砲台と司令部の間で架け橋の役割遂行",
-            messi_career: "英語教師",
-            messi_at: "@ Messi",
-            messi_work_1: "韓国の英語試験の備える学生たちに多数の英語の講義",
-            messi_work_2: "授業の前に講義の計画作り",
-            messi_work_3: "授業のための自体教材作り",
-            work: "03. プロジェクト",
-            work_solo: "個人プロジェクト",
-            work_team: "チームプロジェクト",
-            my_dictionary: "  Chromeの拡張機能(extension)を通じて辞書サイトたちからこのサイトに単語を集め、テストを通じて学習するウェブサイトであります。この後、アプリのバージョンを開発する予定であります。",
-            my_tube: "  ユーチューブの形のビューに簡単なログイン機能を追加しました。",
-        },
+        const btnDarkMode = document.querySelector('#btn_dark_mode');
+        const mode = localStorage.getItem('mode');
 
-        "ko": {
-            en: "영어",
-            ja: "일본어",
-            ko: "한국어",
-            my_name: "제 이름은",
-            myeongkyu: "전명규입니다.",
-            summary: "저는 영어영문학을 전공한 백엔드 엔지니어입니다. 현재는 구직 상태에 있습니다.",
-            resume: "이력서는 여기를 클릭하세요.",
-            about: "01. 자기소개",
-            about_detail: "  안녕하세요. 제 이름은 전명규라고 합니다. 저는 평소에 제가 하는 행위를 어떻게 하면 작업을 단순화시킬 수 있을지 고민을 많이 하는 편인데, 이런 성향 때문에 프로그래밍에 관심을 가지게 되었습니다. 현재는 백엔드 엔지니어지만 풀스택 엔지니어를 지향하고 있습니다.\n\n  저는 중앙대학교에서 영어영문학과 일어일문학을 전공했고 2년 동안 영어학원에서 강사로 일했습니다. 이후에 나라의 부름을 받아 공군 학사장교로 3년 3개월 동안 군복무를 수행하고, 프로그래밍에 흥미를 가지게 되어서 지금까지 이어오고 있습니다.\n\n  현재는 국비지원 it교육을 수료하고, 개인적인 공부와 프로젝트를 진행 중에 있습니다. 제 기술 스택은 다음과 같습니다.",
-            experience: "02. 경력사항",
-            development: "개발직",
-            not_development: "비개발직",
-            rokaf: "대한민국 공군",
-            rokaf_career: "기지중대장/작전통제장교",
-            rokaf_at: "@ 대한민국 공군",
-            rokaf_work_1: "부대의 총기탄약, 부대보급 등 전반적인 관리",
-            rokaf_work_2: "다수의 병력 관리",
-            rokaf_work_3: "교대근무를 진행하며 포대와 사령부에서의 중간 다리역할 수행",
-            messi_career: "전임강사",
-            messi_at: "@ Messi",
-            messi_work_1: "내신/수능/텝스 등의 다수의 영어 강의",
-            messi_work_2: "수업 전 강의 계획 수립",
-            messi_work_3: "수업을 위한 자체 교재 및 자료 제작",
-            work: "03. 프로젝트",
-            work_solo: "개인 프로젝트",
-            work_team: "팀 프로젝트",
-            my_dictionary: "  크롬 확장프로그램(extension)을 통해 사전 사이트에서 단어를 해당 사이트에 저장한 후 테스트를 통해 학습하는 웹사이트입니다. 차후에 앱 버전 개발 예정입니다.",
-            my_tube: "  유튜브 형태의 뷰에 간단한 로그인 기능을 추가했습니다.",
-
-        }
-    };
-
-    // i18n
-    selectLanguage();
-    function selectLanguage() {
-
-        const en = document.querySelector('#en');
-        const ja = document.querySelector('#ja');
-        const ko = document.querySelector('#ko');
-
-        let setLanguage = (lang) => {
-            let changeNodeLists = Array.prototype.slice.call(document.querySelectorAll('[data-detect]'));
-
-            changeNodeLists.map(value => {
-                value.textContent = languages[lang][value.dataset.detect]
-            })
-        };
-
-        en.addEventListener("click", () => {
-            setLanguage(en.dataset.lang);
-            localStorage.setItem('language', 'en');
-        });
-
-        ja.addEventListener("click", () => {
-            setLanguage(ja.dataset.lang);
-            localStorage.setItem('language', 'ja');
-        });
-
-        ko.addEventListener("click", () => {
-            setLanguage(ko.dataset.lang);
-            localStorage.setItem('language', 'ko');
-        });
-    };
-
-    getLanguageSetting();
-    function getLanguageSetting() {
-
-        const setting = localStorage.getItem('language');
-
-        if (setting === null) {
-            const locale = getLocale();
-            if (locale === 'ko') {
-                localStorage.setItem('language', 'ko');
-            } else if (locale === 'ja') {
-                localStorage.setItem('language', 'ja');
-            } else {
-                localStorage.setItem('language', 'en');
-            }
-        }
-
-        const en = document.querySelector('#en');
-        const ja = document.querySelector('#ja');
-        const ko = document.querySelector('#ko');
-
-        let setLanguage = (lang) => {
-            let changeNodeLists = Array.prototype.slice.call(document.querySelectorAll('[data-detect]'));
-
-            changeNodeLists.map(value => {
-                value.textContent = languages[lang][value.dataset.detect]
-            })
-        };
-
-        if (setting === 'ko') {
-            setLanguage(ko.dataset.lang);
-        } else if (setting === 'ja') {
-            setLanguage(ja.dataset.lang);
+        if (mode === 'dark') {
+            btnDarkMode.setAttribute('checked', 'true');
+            toDarkTheme();
         } else {
-            setLanguage(en.dataset.lang);
-        }
-
-
-    };
-
-    function getLocale() {
-
-        if (navigator) {
-            if (navigator.language) {
-                return navigator.language;
-            }
-            else if (navigator.browserLanguage) {
-                return navigator.browserLanguage;
-            }
-            else if (navigator.systemLanguage) {
-                return navigator.systemLanguage;
-            }
-            else if (navigator.userLanguage) {
-                return navigator.userLanguage;
-            }
+            btnDarkMode.removeAttribute('checked');
+            toLightTheme();
         }
     }
 
-    // dark mode
     selectMode();
     function selectMode() {
 
         const btnDarkMode = document.querySelector('#btn_dark_mode');
-        let body = document.querySelector('body');
-        let portfolioNavContents = document.querySelectorAll('.portfolio_nav_content');
-        let portfolioImageNouns = document.querySelectorAll('.portfolio_image_noun');
-
         btnDarkMode.addEventListener('change', function (event) {
 
             if (event.target.checked) {
                 localStorage.setItem('mode', 'dark');
-
-                body.style.backgroundColor = '#181818';
-                body.style.color = 'white';
-
-                for (let i = 0; i < portfolioNavContents.length; i++) {
-                    portfolioNavContents[i].classList.replace('text-dark', 'text-light');
-                }
-
-                const path_dark = './images/noun/dark/'
-                for (let i = 0; i < portfolioImageNouns.length; i++) {
-
-                    const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
-                    const fileName_2 = fileName_1[fileName_1.length - 1];
-                    portfolioImageNouns[i].setAttribute('src', path_dark + fileName_2);
-                }
-
+                toDarkTheme();
             } else {
                 localStorage.setItem('mode', 'light');
-
-                body.style.backgroundColor = 'white';
-                body.style.color = '#181818';
-                for (let i = 0; i < portfolioNavContents.length; i++) {
-                    portfolioNavContents[i].classList.replace('text-light', 'text-dark');
-                }
-
-                const path_light = './images/noun/light/'
-                for (let i = 0; i < portfolioImageNouns.length; i++) {
-
-                    const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
-                    const fileName_2 = fileName_1[fileName_1.length - 1];
-                    portfolioImageNouns[i].setAttribute('src', path_light + fileName_2);
-                }
-
+                toLightTheme();
             }
-
-
-
         });
-
     };
 
-    // getMode();
-    // function getMode() {
+    function toDarkTheme() {
 
-    //     const btnDarkMode = document.querySelector('#btn_dark_mode');
-    //     const mode = localStorage.getItem('mode');
+        let body = document.querySelector('body');
+        let portfolioNavContents = document.querySelectorAll('.portfolio_nav_content');
+        let portfolioImageNouns = document.querySelectorAll('.portfolio_image_noun');
 
-    //     window.addEventListener('load', function () {
-    //         if (mode === 'dark') {
-    //             btnDarkMode.setAttribute('checked', 'true');
-    //         } else {
-    //             btnDarkMode.removeAttribute('checked');
-    //         }
-    //     });
+        body.style.backgroundColor = '#181818';
+        body.style.color = 'white';
 
-    // }
+        for (let i = 0; i < portfolioNavContents.length; i++) {
+            portfolioNavContents[i].classList.replace('text-dark', 'text-light');
+        }
 
+        const path_dark = './images/noun/dark/'
+        for (let i = 0; i < portfolioImageNouns.length; i++) {
+
+            const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
+            const fileName_2 = fileName_1[fileName_1.length - 1];
+            portfolioImageNouns[i].setAttribute('src', path_dark + fileName_2);
+        }
+    }
+
+    function toLightTheme() {
+
+        let body = document.querySelector('body');
+        let portfolioNavContents = document.querySelectorAll('.portfolio_nav_content');
+        let portfolioImageNouns = document.querySelectorAll('.portfolio_image_noun');
+
+        body.style.backgroundColor = 'white';
+        body.style.color = '#181818';
+        for (let i = 0; i < portfolioNavContents.length; i++) {
+            portfolioNavContents[i].classList.replace('text-light', 'text-dark');
+        }
+
+        const path_light = './images/noun/light/'
+        for (let i = 0; i < portfolioImageNouns.length; i++) {
+
+            const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
+            const fileName_2 = fileName_1[fileName_1.length - 1];
+            portfolioImageNouns[i].setAttribute('src', path_light + fileName_2);
+        }
+    }
 
     addNavbarEvent();
     function addNavbarEvent() {
+        const header = document.querySelector('header');
+
+        let lastScrollTop = 0;
+
+        window.addEventListener("scroll", function () {
+            let st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st > lastScrollTop) {
+                // down
+                header.classList.remove('navbar_fix');
+            } else {
+                // up
+                header.classList.add('navbar_fix');
+            }
+            lastScrollTop = st <= 0 ? 0 : st; // for mobile or negative scrolling
+        }, false);
+
+
         const navContents = document.querySelectorAll('.portfolio_nav_content');
         for (let i = 0; i < navContents.length; i++) {
             navContents[i].addEventListener('mouseover', function () {
@@ -605,8 +475,8 @@
 
     addExperienceEvent();
     function addExperienceEvent() {
-        const portfolioExperience = document.querySelectorAll('.portfolio_experience');
 
+        const portfolioExperience = document.querySelectorAll('.portfolio_experience');
         const btnRokaf = document.querySelector('#btn_rokaf');
         const rokaf = document.querySelector('#rokaf');
 
@@ -633,19 +503,15 @@
     function addModalImageEvent() {
         const portfolioImageProjects = document.querySelectorAll('.portfolio_image_project');
 
-
         for (let i = 0; i < portfolioImageProjects.length; i++) {
 
             portfolioImageProjects[i].addEventListener('click', function () {
                 const path_imageProject = portfolioImageProjects[i].getAttribute('src');
 
-                const modalBody = document.querySelector('.modal-content');
-                modalBody.innerHTML = '<img src="' + path_imageProject + '" data-bs-dismiss="modal">'
+                const modalBody = document.querySelector('.modal-dialog');
+                modalBody.innerHTML = '<img class="rounded" src="' + path_imageProject + '" data-bs-dismiss="modal" style="max-width:100%; height:auto;">'
 
-                portfolioImageProjects[i].addEventListener('mouseover', function () {
-                    portfolioImageProjects[i].style.cursor = 'pointer';
-                });
-            })
+            });
 
         }
 
