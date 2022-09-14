@@ -424,18 +424,20 @@
     function addNavbarEvent() {
         const header = document.querySelector('header');
 
-        let lastScrollTop = 0;
+        let lastScrollTop = 100;
 
         window.addEventListener("scroll", function () {
             let st = window.pageYOffset || document.documentElement.scrollTop;
             if (st > lastScrollTop) {
+                console.log(st);
                 // down
                 header.classList.remove('navbar_fix');
             } else {
+                console.log(st);
                 // up
                 header.classList.add('navbar_fix');
             }
-            lastScrollTop = st <= 0 ? 0 : st; // for mobile or negative scrolling
+            lastScrollTop = st <= 100 ? 100 : st; // for mobile or negative scrolling
         }, false);
 
 
