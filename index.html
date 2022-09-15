@@ -219,10 +219,11 @@
             <div class="portfolio_emphasis_font fw-bold my-3" data-detect="experience">02. 경력사항</div>
             <!-- mobile list -->
             <div class="d-block d-md-none row ps-4" style="font-size:20px;">
-                <div class="col portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf">
+                <div class="portfolio_experience_title col my-3" type="button" data-detect="rokaf"
+                    id="btn_rokaf_mobile">
                     대한민국 공군
                 </div>
-                <div class="col portfolio_experience_title my-3" type="button" id="btn_messi">
+                <div class="portfolio_experience_title col my-3" type="button" id="btn_messi_mobile">
                     Messi
                 </div>
             </div>
@@ -293,7 +294,7 @@
             <!-- My Dictionary -->
             <div class="portfolio_subsection row">
                 <!-- desktop photo -->
-                <div class="d-md-block d-none col-md-7 d-flex justify-content-center align-items-center">
+                <div class="d-md-block d-none col-md-7 d-md-flex align-items-center">
                     <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
                         data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
                 </div>
@@ -354,7 +355,7 @@
                     </div>
                 </div>
                 <!-- desktop photo -->
-                <div class="d-none d-md-block col-md-7 d-flex justify-content-center align-items-center">
+                <div class="d-none d-md-block col-md-7 d-md-flex align-items-center">
                     <img class="portfolio_image_project border rounded" src="./images/project/my_tube.png"
                         data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
                 </div>
@@ -364,11 +365,11 @@
 
     <!-- sidebar -->
     <div class="d-md-flex flex-md-column d-flex flex-row justify-content-center mb-3" id="sidebar">
-        <a class="py-md-2 mx-3" href="https://github.com/foreverfl" target="_blank"><img class="portfolio_image_noun"
+        <a class="py-md-2" href="https://github.com/foreverfl" target="_blank"><img class="portfolio_image_noun"
                 src="./images/noun/light/github.png" style="width: 30px"></a>
-        <a class="py-md-2 mx-3" href="https://www.instagram.com/foreverfl/" target="_blank"><img
-                class="portfolio_image_noun" src="./images/noun/light/insta.png" style="width: 30px"></a>
-        <a class="py-md-2 mx-3" href="http://tarotaro90.com/" target="_blank"><img class="portfolio_image_noun"
+        <a class="py-md-2" href="https://www.instagram.com/foreverfl/" target="_blank"><img class="portfolio_image_noun"
+                src="./images/noun/light/insta.png" style="width: 30px"></a>
+        <a class="py-md-2" href="http://tarotaro90.com/" target="_blank"><img class="portfolio_image_noun"
                 src="./images/noun/light/wordpress.png" style="width: 30px"></a>
     </div>
 
@@ -402,9 +403,7 @@
             let st = window.pageYOffset || document.documentElement.scrollTop;
             if (st > lastScrollTop) {
                 // down
-
                 header.classList.remove('navbar_fix');
-
 
             } else {
                 // up
@@ -461,6 +460,7 @@
 
         const portfolioExperience = document.querySelectorAll('.portfolio_experience');
         const btnRokaf = document.querySelector('#btn_rokaf');
+        const btnRokafMobile = document.querySelector('#btn_rokaf_mobile');
         const rokaf = document.querySelector('#rokaf');
 
         btnRokaf.addEventListener('click', function () {
@@ -470,11 +470,26 @@
             rokaf.style.display = 'block';
         });
 
+        btnRokafMobile.addEventListener('click', function () {
+            for (let i = 0; i < portfolioExperience.length; i++) {
+                portfolioExperience[i].style.display = 'none';
+            }
+            rokaf.style.display = 'block';
+        });
+
 
         const btnMessi = document.querySelector('#btn_messi');
+        const btnMessiMobile = document.querySelector('#btn_messi_mobile');
         const messi = document.querySelector('#messi');
 
         btnMessi.addEventListener('click', function () {
+            for (let i = 0; i < portfolioExperience.length; i++) {
+                portfolioExperience[i].style.display = 'none';
+            }
+            messi.style.display = 'block';
+        });
+
+        btnMessiMobile.addEventListener('click', function () {
             for (let i = 0; i < portfolioExperience.length; i++) {
                 portfolioExperience[i].style.display = 'none';
             }
@@ -505,20 +520,42 @@
         const portfolioImageNouns = document.querySelectorAll('.portfolio_image_noun');
         let pathLight = './images/noun/light/'
         let pathLightHover = './images/noun/light_hover/'
+        let pathDark = './images/noun/dark/'
+        let pathDarkHover = './images/noun/dark_hover/'
 
-        for (let i = 0; i < portfolioImageNouns.length; i++) {
-            const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
-            const fileName_2 = fileName_1[fileName_1.length - 1];
 
-            portfolioImageNouns[i].addEventListener('mouseover', function () {
-                portfolioImageNouns[i].style.width = '40px';
-                portfolioImageNouns[i].setAttribute('src', pathLightHover + fileName_2);
-            });
+        if (localStorage.getItem('mode') === 'light') {
+            for (let i = 0; i < portfolioImageNouns.length; i++) {
+                const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
+                const fileName_2 = fileName_1[fileName_1.length - 1];
 
-            portfolioImageNouns[i].addEventListener('mouseleave', function () {
-                portfolioImageNouns[i].style.width = '30px';
-                portfolioImageNouns[i].setAttribute('src', pathLight + fileName_2);
-            });
+                portfolioImageNouns[i].addEventListener('mouseover', function () {
+                    portfolioImageNouns[i].style.width = '40px';
+                    portfolioImageNouns[i].setAttribute('src', pathLightHover + fileName_2);
+                });
+
+                portfolioImageNouns[i].addEventListener('mouseleave', function () {
+                    portfolioImageNouns[i].style.width = '30px';
+                    portfolioImageNouns[i].setAttribute('src', pathLight + fileName_2);
+                });
+            }
+
+        } else if (localStorage.getItem('mode') === 'dark') {
+            for (let i = 0; i < portfolioImageNouns.length; i++) {
+                const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
+                const fileName_2 = fileName_1[fileName_1.length - 1];
+
+                portfolioImageNouns[i].addEventListener('mouseover', function () {
+                    portfolioImageNouns[i].style.width = '40px';
+                    portfolioImageNouns[i].setAttribute('src', pathDarkHover + fileName_2);
+                });
+
+                portfolioImageNouns[i].addEventListener('mouseleave', function () {
+                    portfolioImageNouns[i].style.width = '30px';
+                    portfolioImageNouns[i].setAttribute('src', pathDark + fileName_2);
+                });
+            }
+
         }
     }
 
@@ -531,5 +568,4 @@
         });
     }
 </script>
-
 </html>
