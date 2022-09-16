@@ -87,6 +87,12 @@
             animation: down 1s ease;
         }
 
+        @media(max-width:576px) {
+            .navbar_fix {
+                width: 100%;
+            }
+        }
+
         @keyframes down {
             0% {
                 transform: translateY(-50px)
@@ -101,6 +107,13 @@
             min-width: 80px;
             margin-left: -50px;
             cursor: pointer;
+        }
+
+        @media(max-width:576px) {
+            .dropdown-menu {
+                min-width: 80px;
+                margin-left: 30px;
+            }
         }
 
         /* body */
@@ -140,16 +153,51 @@
 <body>
     <!-- header -->
     <div class="container-fluid" id="navbar">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-            <a href="/" class="d-flex align-items-center mb-3 me-auto text-dark text-decoration-none">
+        <!-- mobile -->
+        <header class="d-md-none d-block navbar" id="header_mobile">
+            <div class="d-flex justify-content-between">
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_mobile">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <span class="form-check form-switch d-inline-flex">
+                    <input class="portFolio_btn_mode portfolio_nav_content form-check-input" type="checkbox">
+                </span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbar_mobile">
+                <li class="nav-item" style="list-style:none;"><a href="#01_about"
+                        class="nav-link"><span>01.&nbsp;</span><span
+                            class="text-dark portfolio_nav_content">About</span></a></li>
+                <li class="nav-item" style="list-style:none;"><a href="#02_experience"
+                        class="nav-link"><span>02.&nbsp;</span><span
+                            class="text-dark portfolio_nav_content">Experience</span></a></li>
+                <li class="nav-item" style="list-style:none;"><a href="#03_work"
+                        class="nav-link"><span>03.&nbsp;</span><span
+                            class="text-dark portfolio_nav_content">Work</span></a></li>
+                <div class="dropdown-center">
+                    <span class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>04.&nbsp;</span><span class="text-dark portfolio_nav_content">Languages</span>
+                    </span>
+                    <ul class="dropdown-menu" id="select_language">
+                        <li><a class="dropdown-item" data-lang="en" id="en" data-detect="en">영어</a></li>
+                        <li><a class="dropdown-item" data-lang="ja" id="ja" data-detect="ja">일본어</a></li>
+                        <li><a class="dropdown-item" data-lang="ko" id="ko" data-detect="ko">한국어</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- desktop -->
+        <header class="d-md-block d-none d-md-flex flex-wrap justify-content-center align-items-center py-3 mb-4 border-bottom">
+            <a href="/" class="my-auto me-auto text-dark text-decoration-none">
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
-                <span class="portfolio_emphasis_font_big fs-4 text-dark portfolio_nav_content">portfolio</span>
+                <span class="portfolio_emphasis_font_big portfolio_nav_content fs-4 text-dar">portfolio</span>
             </a>
 
             <ul class="nav nav-pills" style="font-size:20px">
-                <li class="nav-item active"><a href="#01_about" class="nav-link"><span>01.&nbsp;</span><span
+                <li class="nav-item"><a href="#01_about" class="nav-link"><span>01.&nbsp;</span><span
                             class="text-dark portfolio_nav_content">About</span></a></li>
                 <li class="nav-item"><a href="#02_experience" class="nav-link"><span>02.&nbsp;</span><span
                             class="text-dark portfolio_nav_content">Experience</span></a></li>
@@ -166,9 +214,8 @@
                     </ul>
                 </div>
                 <div class="form-check form-switch d-flex align-self-center">
-                    <input class="form-check-input portfolio_nav_content" type="checkbox" id="btn_dark_mode">
+                    <input class="portFolio_btn_mode portfolio_nav_content form-check-input" type="checkbox">
                 </div>
-
             </ul>
         </header>
     </div>
@@ -218,24 +265,27 @@
         <div class="portfolio_section row" id="02_experience">
             <div class="portfolio_emphasis_font fw-bold my-3" data-detect="experience">02. 경력사항</div>
             <!-- mobile list -->
-            <div class="d-block d-md-none row ps-4" style="font-size:20px;">
-                <div class="portfolio_experience_title col my-3" type="button" data-detect="rokaf"
+            <div class="d-block d-md-none row mx-auto" style="font-size:20px;">
+                <div class="portfolio_experience_title col my-3 d-flex justify-content-between" type="button" 
                     id="btn_rokaf_mobile">
-                    대한민국 공군
+                    <span data-detect="rokaf">대한민국 공군</span>
+                    <span class="text-secondary" style="font-size: 20px;">2018. 3 ~ 2021. 5</span>
                 </div>
-                <div class="portfolio_experience_title col my-3" type="button" id="btn_messi_mobile">
+                <div class="portfolio_experience_title col my-3 d-flex justify-content-between" type="button" id="btn_messi_mobile">
                     Messi
+                    <span class="text-secondary" style="font-size: 20px;">2016. 3 ~ 2018. 2</span>
                 </div>
             </div>
+
             <!-- desktop list -->
             <div class="d-md-block d-none col-md-3 align-self-center ps-4" style="font-size:20px;">
                 <div class="fw-bold" data-detect="development">개발직</div>
                 <hr style="width:60%">
                 <div class="fw-bold" data-detect="not_development">비개발직</div>
-                <div class="portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf">
+                <div class="portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf" style="width:60%">
                     대한민국 공군
                 </div>
-                <div class="portfolio_experience_title my-3" type="button" id="btn_messi">
+                <div class="portfolio_experience_title my-3" type="button" id="btn_messi" style="width:60%">
                     Messi
                 </div>
             </div>
@@ -249,7 +299,7 @@
                             data-detect="rokaf_at">@ 대한민국 공군</span>
                     </div>
                     <!-- period -->
-                    <div class="text-secondary" style="font-size: 20px;">2018. 3 ~ 2021. 5</div>
+                    <div class="d-md-block d-none text-secondary" style="font-size: 20px;">2018. 3 ~ 2021. 5</div>
                     <!-- work -->
                     <ul>
                         <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_1">부대의 총기탄약,
@@ -271,7 +321,7 @@
                             data-detect="messi_at">@ Messi</span>
                     </div>
                     <!-- period -->
-                    <div class="text-secondary" style="font-size: 20px;">2016. 3 ~ 2018. 2</div>
+                    <div class="d-md-block d-none text-secondary" style="font-size: 20px;">2016. 3 ~ 2018. 2</div>
                     <!-- work -->
                     <ul>
                         <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_1">내신/수능/텝스 등의
@@ -292,7 +342,7 @@
         <div class="portfolio_section row" id="03_work">
             <div class="portfolio_emphasis_font fw-bold my-3" data-detect="work">03. 프로젝트</div>
             <!-- My Dictionary -->
-            <div class="portfolio_subsection row">
+            <div class="portfolio_subsection row mx-auto">
                 <!-- desktop photo -->
                 <div class="d-md-block d-none col-md-7 d-md-flex align-items-center">
                     <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
@@ -329,7 +379,7 @@
             </div>
 
             <!-- MyTube-->
-            <div class="portfolio_subsection row">
+            <div class="portfolio_subsection row mx-auto">
                 <div class="col-md-5">
                     <div class="text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
                     <div class="portfolio_emphasis_font_small text-start">MyTube</div>
@@ -365,11 +415,11 @@
 
     <!-- sidebar -->
     <div class="d-md-flex flex-md-column d-flex flex-row justify-content-center mb-3" id="sidebar">
-        <a class="py-md-2" href="https://github.com/foreverfl" target="_blank"><img class="portfolio_image_noun"
+        <a class="py-md-2 mx-md-0 mx-3" href="https://github.com/foreverfl" target="_blank"><img class="portfolio_image_noun"
                 src="./images/noun/light/github.png" style="width: 30px"></a>
-        <a class="py-md-2" href="https://www.instagram.com/foreverfl/" target="_blank"><img class="portfolio_image_noun"
+        <a class="py-md-2 mx-md-0 mx-3" href="https://www.instagram.com/foreverfl/" target="_blank"><img class="portfolio_image_noun"
                 src="./images/noun/light/insta.png" style="width: 30px"></a>
-        <a class="py-md-2" href="http://tarotaro90.com/" target="_blank"><img class="portfolio_image_noun"
+        <a class="py-md-2 mx-md-0 mx-3" href="http://tarotaro90.com/" target="_blank"><img class="portfolio_image_noun"
                 src="./images/noun/light/wordpress.png" style="width: 30px"></a>
     </div>
 
@@ -395,7 +445,7 @@
 <script>
     addNavbarEvent();
     function addNavbarEvent() {
-        const header = document.querySelector('header');
+        const headers = document.querySelectorAll('header');
 
         let lastScrollTop = 100;
 
@@ -403,12 +453,15 @@
             let st = window.pageYOffset || document.documentElement.scrollTop;
             if (st > lastScrollTop) {
                 // down
-                header.classList.remove('navbar_fix');
+                for (let i = 0; i < headers.length; i++) {
+                    headers[i].classList.remove('navbar_fix');
+                }
 
             } else {
                 // up
-                header.classList.add('navbar_fix');
-
+                for (let i = 0; i < headers.length; i++) {
+                    headers[i].classList.add('navbar_fix');
+                }
             }
             lastScrollTop = st <= 100 ? 100 : st; // for mobile or negative scrolling
         }, false);
@@ -515,50 +568,6 @@
 
     }
 
-    addNounImageEvent();
-    function addNounImageEvent() {
-        const portfolioImageNouns = document.querySelectorAll('.portfolio_image_noun');
-        let pathLight = './images/noun/light/'
-        let pathLightHover = './images/noun/light_hover/'
-        let pathDark = './images/noun/dark/'
-        let pathDarkHover = './images/noun/dark_hover/'
-
-
-        if (localStorage.getItem('mode') === 'light') {
-            for (let i = 0; i < portfolioImageNouns.length; i++) {
-                const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
-                const fileName_2 = fileName_1[fileName_1.length - 1];
-
-                portfolioImageNouns[i].addEventListener('mouseover', function () {
-                    portfolioImageNouns[i].style.width = '40px';
-                    portfolioImageNouns[i].setAttribute('src', pathLightHover + fileName_2);
-                });
-
-                portfolioImageNouns[i].addEventListener('mouseleave', function () {
-                    portfolioImageNouns[i].style.width = '30px';
-                    portfolioImageNouns[i].setAttribute('src', pathLight + fileName_2);
-                });
-            }
-
-        } else if (localStorage.getItem('mode') === 'dark') {
-            for (let i = 0; i < portfolioImageNouns.length; i++) {
-                const fileName_1 = portfolioImageNouns[i].getAttribute('src').split(/\//);
-                const fileName_2 = fileName_1[fileName_1.length - 1];
-
-                portfolioImageNouns[i].addEventListener('mouseover', function () {
-                    portfolioImageNouns[i].style.width = '40px';
-                    portfolioImageNouns[i].setAttribute('src', pathDarkHover + fileName_2);
-                });
-
-                portfolioImageNouns[i].addEventListener('mouseleave', function () {
-                    portfolioImageNouns[i].style.width = '30px';
-                    portfolioImageNouns[i].setAttribute('src', pathDark + fileName_2);
-                });
-            }
-
-        }
-    }
-
     tmp();
     function tmp() {
         const resume = document.querySelector('#resume');
@@ -568,4 +577,5 @@
         });
     }
 </script>
+
 </html>
