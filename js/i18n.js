@@ -99,9 +99,9 @@ const languages = {
 selectLanguage();
 function selectLanguage() {
 
-    const en = document.querySelector('#en');
-    const ja = document.querySelector('#ja');
-    const ko = document.querySelector('#ko');
+    const ens = document.querySelectorAll('.portfolio_en');
+    const jas = document.querySelectorAll('.portfolio_ja');
+    const kos = document.querySelectorAll('.portfolio_ko');
 
     let setLanguage = (lang) => {
         let changeNodeLists = Array.prototype.slice.call(document.querySelectorAll('[data-detect]'));
@@ -111,20 +111,23 @@ function selectLanguage() {
         })
     };
 
-    en.addEventListener("click", () => {
-        setLanguage(en.dataset.lang);
-        localStorage.setItem('language', 'en');
-    });
+    for (let i = 0; i < 2; i++) {
+        ens[i].addEventListener("click", () => {
+            setLanguage(ens[i].dataset.lang);
+            localStorage.setItem('language', 'en');
+        });
 
-    ja.addEventListener("click", () => {
-        setLanguage(ja.dataset.lang);
-        localStorage.setItem('language', 'ja');
-    });
+        jas[i].addEventListener("click", () => {
+            setLanguage(jas[i].dataset.lang);
+            localStorage.setItem('language', 'ja');
+        });
 
-    ko.addEventListener("click", () => {
-        setLanguage(ko.dataset.lang);
-        localStorage.setItem('language', 'ko');
-    });
+        kos[i].addEventListener("click", () => {
+            setLanguage(kos[i].dataset.lang);
+            localStorage.setItem('language', 'ko');
+        });
+    }
+
 };
 
 getLanguageSetting();
@@ -143,9 +146,9 @@ function getLanguageSetting() {
         }
     }
 
-    const en = document.querySelector('#en');
-    const ja = document.querySelector('#ja');
-    const ko = document.querySelector('#ko');
+    const ens = document.querySelectorAll('.portfolio_en');
+    const jas = document.querySelectorAll('.portfolio_ja');
+    const kos = document.querySelectorAll('.portfolio_ko');
 
     let setLanguage = (lang) => {
         let changeNodeLists = Array.prototype.slice.call(document.querySelectorAll('[data-detect]'));
@@ -155,14 +158,17 @@ function getLanguageSetting() {
         })
     };
 
-    if (setting === 'ko') {
-        setLanguage(ko.dataset.lang);
-    } else if (setting === 'ja') {
-        setLanguage(ja.dataset.lang);
-    } else {
-        setLanguage(en.dataset.lang);
-    }
+    for (let i = 0; i < 2; i++) {
+        if (setting === 'ko') {
+            setLanguage(kos[i].dataset.lang);
+        } else if (setting === 'ja') {
+            setLanguage(jas[i].dataset.lang);
+        } else {
+            setLanguage(ens[i].dataset.lang);
+        }
+    };
 };
+
 
 function getLocale() {
     if (navigator) {
