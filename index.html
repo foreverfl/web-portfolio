@@ -443,6 +443,22 @@
 <script type="text/javascript" src="./js/i18n.js"></script>
 <script type="text/javascript" src="./js/convertTheme.js"></script>
 <script>
+    showResume();
+    function showResume(){
+        const resume = document.querySelector('#resume');
+        console.log(resume);
+
+        resume.addEventListener('click', function(){
+            if(localStorage.getItem('language') === 'en') {
+                alert('My English resume is not yet ready');
+            } else if(localStorage.getItem('language') === 'ja') {
+                alert('まだ履歴書が準備しておりません。');
+            } else if(localStorage.getItem('language') == 'ko') {
+                window.location.href = '/resumes/resume_korean.pdf';
+            } 
+        });
+    };
+
     addNavbarEvent();
     function addNavbarEvent() {
         const headers = document.querySelectorAll('header');
@@ -568,14 +584,6 @@
 
     }
 
-    tmp();
-    function tmp() {
-        const resume = document.querySelector('#resume');
-
-        resume.addEventListener('click', function () {
-            alert('추가 예정입니다.');
-        });
-    }
 </script>
 
 </html>
