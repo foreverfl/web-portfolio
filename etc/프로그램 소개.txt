@@ -1,0 +1,40 @@
+프로그램 소개
+
+한국어
+My Dictionry
+구글 확장프로그램(extension)을 통해 사전 사이트에서 단어를 해당 사이트에 저장한 후 테스트를 통해 학습하는 웹사이트입니다. 현재 운영중인 사이트에서 수익화가 완료되면 배포 예정입니다.
+
+My Study Materials
+개인 공부 자료를 정리할 수 있는 웹사이트입니다. 현재 제가 정리한 리눅스 공부 정리 자료만 존재합니다. AWS를 통해서 서비스를 하고 있으며, 수익화 예정에 있습니다.
+
+Manage Words
+과외를 할 때 학생들의 단어를 체계적으로 관리하기 위해서 만든 개인 용도 프로그램입니다.
+
+My Video Viewer
+GUI를 통해서 로컬호스트를 열어서, 컴퓨터에 저장된 폴더에서 동영상을 가져와서 Tiktok처럼 무작위로 볼 수 있도록 하는 개인 용도 프로그램입니다.
+
+영어
+My Dictionary
+A website that allows you to save words from dictionary websites via a Google Chrome extension and learn through tests. The website will be deployed once monetization on the currently operational site is complete.
+
+My Study Materials
+A website where you can organize your personal study materials. Currently, it contains only my Linux study materials. The service is hosted on AWS and is planned to be monetized in the future.
+
+Manage Words
+A private-use software designed for systematically managing students' vocabulary when tutoring.
+
+My Video Viewer
+A private-use software that opens localhost through a GUI and allows you to fetch videos from folders stored on your computer to watch them randomly, similar to TikTok.
+
+일본어
+My Dictionary（マイ・ディクショナリー）
+Google Chromeの拡張機能を通じて、辞書サイトから単語を保存し、テストで学習できるウェブサイトです。現在運営中のサイトの収益化が完了次第、公開予定です。
+
+My Study Materials（マイ・スタディ・マテリアルズ）
+個人の学習資料を整理できるウェブサイトです。現在は私が整理したLinuxの学習資料のみが存在します。AWSでサービスを提供しており、将来的に収益化を予定しています。
+
+Manage Words（マネージ・ワーズ）
+家庭教師をする際、生徒の語彙を体系的に管理するために作成したプライベート用ソフトウェアです。
+
+My Video Viewer（マイ・ビデオ・ビューアー）
+GUIを通じてローカルホストを開き、コンピュータに保存されたフォルダから動画を取り込み、TikTokのようにランダムで視聴できるようにしたプライベート用ソフトウェアです。

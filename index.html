@@ -1,589 +1,869 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <!-- favicon -->
-    <link rel="favicon" href="./favicon.ico">
-    <style>
-        @font-face {
-            font-family: 'basic';
-            src: url('./fonts/NanumPenScript-Regular.ttf');
-        }
-
-        @font-face {
-            font-family: 'basic';
-            src: url('./fonts/KiwiMaru-Regular.ttf');
-            unicode-range: U+3001, U+3002, U+300C-300F, U+3041-3096,
-                U+309D, U+309E, U+30A1-30FA, U+30FC,
-                U+4E00-9FEA, U+3400-4DB5, U+FF5E, U+F900-FA6D;
-        }
-
-        @font-face {
-            font-family: 'emphasis';
-            src: url('./fonts/Jua-Regular.ttf');
-        }
-
-        @font-face {
-            font-family: 'emphasis';
-            src: url('./fonts/PottaOne-Regular.ttf');
-            unicode-range: U+3001, U+3002, U+300C-300F, U+3041-3096,
-                U+309D, U+309E, U+30A1-30FA, U+30FC,
-                U+4E00-9FEA, U+3400-4DB5, U+FF5E, U+F900-FA6D;
-        }
-
-        body {
-            position: relative;
-            font-family: 'basic';
-            font-size: 30px;
-        }
-
-        pre {
-            font-family: 'basic';
-            font-size: 30px;
-            overflow: auto;
-            white-space: pre-wrap;
-        }
-
-        .portfolio_emphasis_font {
-            font-family: 'emphasis'
-        }
-
-        .portfolio_emphasis_font_big {
-            font-family: 'emphasis';
-            font-size: 50px;
-        }
-
-        .portfolio_emphasis_font_small {
-            font-family: 'emphasis';
-            font-size: 20px;
-        }
-
-        .portfolio_section {
-            margin-top: 350px;
-            margin-bottom: 350px;
-        }
-
-        .portfolio_subsection {
-            margin-top: 100px;
-            margin-bottom: 100px;
-        }
-
-        /* navbar*/
-        .navbar_fix {
-            position: fixed;
-            z-index: 100000;
-            width: 90%;
-            top: 0px;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-            background-color: white;
-            animation: down 1s ease;
-        }
-
-        @media(max-width:576px) {
-            .navbar_fix {
-                width: 100%;
-            }
-        }
-
-        @keyframes down {
-            0% {
-                transform: translateY(-50px)
-            }
-
-            100% {
-                transform: translateY(0px)
-            }
-        }
-
-        .dropdown-menu {
-            min-width: 80px;
-            margin-left: -50px;
-            cursor: pointer;
-        }
-
-        @media(max-width:576px) {
-            .dropdown-menu {
-                min-width: 80px;
-                margin-left: 30px;
-            }
-        }
-
-        /* body */
-        #photo_me {
-            box-shadow: 15px 15px 15px #000;
-        }
-
-        .portfolio_experience_title:hover {
-            background-color: rgb(219, 219, 219);
-            cursor: pointer;
-        }
-
-        .portfolio_image_project {
-            cursor: pointer;
-        }
-
-        /* sidebar */
-        #sidebar {
-            width: 50px;
-            position: sticky;
-            left: 20px;
-            bottom: 20px;
-        }
-
-        @media(max-width:576px) {
-            #sidebar {
-                width: auto;
-                position: relative;
-                left: auto;
-                bottom: auto;
-            }
-        }
-    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="favicon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./style.css" />
     <title>portfolio</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- header -->
     <div class="container-fluid" id="navbar">
-        <!-- mobile -->
-        <header class="d-md-none d-block navbar" id="header_mobile">
-            <div class="d-flex justify-content-between">
-                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_mobile">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <span class="form-check form-switch d-inline-flex">
-                    <input class="portFolio_btn_mode portfolio_nav_content form-check-input" type="checkbox">
-                </span>
-            </div>
+      <!-- mobile -->
+      <header class="d-md-none d-block navbar" id="header_mobile">
+        <div class="d-flex justify-content-between">
+          <button
+            class="navbar-toggler ms-2"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar_mobile"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <span class="form-check form-switch d-inline-flex">
+            <input
+              class="portFolio_btn_mode portfolio_nav_content form-check-input"
+              type="checkbox"
+            />
+          </span>
+        </div>
 
-            <div class="collapse navbar-collapse" id="navbar_mobile">
-                <li class="nav-item" style="list-style:none;"><a href="#01_about"
-                        class="nav-link"><span>01.&nbsp;</span><span
-                            class="text-dark portfolio_nav_content">About</span></a></li>
-                <li class="nav-item" style="list-style:none;"><a href="#02_experience"
-                        class="nav-link"><span>02.&nbsp;</span><span
-                            class="text-dark portfolio_nav_content">Experience</span></a></li>
-                <li class="nav-item" style="list-style:none;"><a href="#03_work"
-                        class="nav-link"><span>03.&nbsp;</span><span
-                            class="text-dark portfolio_nav_content">Work</span></a></li>
-                <div class="dropdown-center">
-                    <span class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>04.&nbsp;</span><span class="text-dark portfolio_nav_content">Languages</span>
-                    </span>
-                    <ul class="dropdown-menu" id="select_language">
-                        <li><a class="portfolio_en dropdown-item" data-lang="en" data-detect="en">영어</a></li>
-                        <li><a class="portfolio_ja dropdown-item" data-lang="ja" data-detect="ja">일본어</a></li>
-                        <li><a class="portfolio_ko dropdown-item" data-lang="ko" data-detect="ko">한국어</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-
-        <!-- desktop -->
-        <header class="d-md-block d-none d-md-flex flex-wrap justify-content-center align-items-center py-3 mb-4 border-bottom">
-            <a href="/" class="my-auto me-auto text-dark text-decoration-none">
-                <svg class="bi me-2" width="40" height="32">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-                <span class="portfolio_emphasis_font_big portfolio_nav_content fs-4 text-dar">portfolio</span>
-            </a>
-
-            <ul class="nav nav-pills" style="font-size:20px">
-                <li class="nav-item"><a href="#01_about" class="nav-link"><span>01.&nbsp;</span><span
-                            class="text-dark portfolio_nav_content">About</span></a></li>
-                <li class="nav-item"><a href="#02_experience" class="nav-link"><span>02.&nbsp;</span><span
-                            class="text-dark portfolio_nav_content">Experience</span></a></li>
-                <li class="nav-item"><a href="#03_work" class="nav-link"><span>03.&nbsp;</span><span
-                            class="text-dark portfolio_nav_content">Work</span></a></li>
-                <div class="dropdown-center">
-                    <span class="nav-link" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span>04.&nbsp;</span><span class="text-dark portfolio_nav_content">Languages</span>
-                    </span>
-                    <ul class="dropdown-menu" id="select_language">
-                        <li><a class="portfolio_en dropdown-item" data-lang="en" data-detect="en">영어</a></li>
-                        <li><a class="portfolio_ja dropdown-item" data-lang="ja" data-detect="ja">일본어</a></li>
-                        <li><a class="portfolio_ko dropdown-item" data-lang="ko" data-detect="ko">한국어</a></li>
-                    </ul>
-                </div>
-                <div class="form-check form-switch d-flex align-self-center">
-                    <input class="portFolio_btn_mode portfolio_nav_content form-check-input" type="checkbox">
-                </div>
+        <div class="collapse navbar-collapse" id="navbar_mobile">
+          <li class="nav-item" style="list-style: none">
+            <a href="#01_about" class="nav-link"
+              ><span>01.&nbsp;</span
+              ><span class="text-dark portfolio_nav_content">About</span></a
+            >
+          </li>
+          <li class="nav-item" style="list-style: none">
+            <a href="#02_experience" class="nav-link"
+              ><span>02.&nbsp;</span
+              ><span class="text-dark portfolio_nav_content"
+                >Experience</span
+              ></a
+            >
+          </li>
+          <li class="nav-item" style="list-style: none">
+            <a href="#03_work" class="nav-link"
+              ><span>03.&nbsp;</span
+              ><span class="text-dark portfolio_nav_content">Work</span></a
+            >
+          </li>
+          <div class="dropdown-center">
+            <span
+              class="nav-link"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span>04.&nbsp;</span
+              ><span class="text-dark portfolio_nav_content">Languages</span>
+            </span>
+            <ul class="dropdown-menu" id="select_language">
+              <li>
+                <a
+                  class="portfolio_en dropdown-item"
+                  data-lang="en"
+                  data-detect="en"
+                  >영어</a
+                >
+              </li>
+              <li>
+                <a
+                  class="portfolio_ja dropdown-item"
+                  data-lang="ja"
+                  data-detect="ja"
+                  >일본어</a
+                >
+              </li>
+              <li>
+                <a
+                  class="portfolio_ko dropdown-item"
+                  data-lang="ko"
+                  data-detect="ko"
+                  >한국어</a
+                >
+              </li>
             </ul>
-        </header>
+          </div>
+        </div>
+      </header>
+
+      <!-- desktop -->
+      <header
+        class="d-md-block d-none d-md-flex flex-wrap justify-content-center align-items-center py-3 mb-4 border-bottom"
+      >
+        <a href="/" class="my-auto me-auto text-dark text-decoration-none">
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <span
+            class="portfolio_emphasis_font_big portfolio_nav_content fs-4 text-dark"
+            >portfolio</span
+          >
+        </a>
+
+        <ul class="nav nav-pills" style="font-size: 20px">
+          <li class="nav-item">
+            <a href="#01_about" class="nav-link"
+              ><span>01.&nbsp;</span
+              ><span class="text-dark portfolio_nav_content">About</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#02_experience" class="nav-link"
+              ><span>02.&nbsp;</span
+              ><span class="text-dark portfolio_nav_content"
+                >Experience</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#03_work" class="nav-link"
+              ><span>03.&nbsp;</span
+              ><span class="text-dark portfolio_nav_content">Work</span></a
+            >
+          </li>
+          <div class="dropdown-center">
+            <span
+              class="nav-link"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span>04.&nbsp;</span
+              ><span class="text-dark portfolio_nav_content">Languages</span>
+            </span>
+            <ul class="dropdown-menu" id="select_language">
+              <li>
+                <a
+                  class="portfolio_en dropdown-item"
+                  data-lang="en"
+                  data-detect="en"
+                  >영어</a
+                >
+              </li>
+              <li>
+                <a
+                  class="portfolio_ja dropdown-item"
+                  data-lang="ja"
+                  data-detect="ja"
+                  >일본어</a
+                >
+              </li>
+              <li>
+                <a
+                  class="portfolio_ko dropdown-item"
+                  data-lang="ko"
+                  data-detect="ko"
+                  >한국어</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="form-check form-switch d-flex align-self-center">
+            <input
+              class="portFolio_btn_mode portfolio_nav_content form-check-input"
+              type="checkbox"
+            />
+          </div>
+        </ul>
+      </header>
     </div>
 
     <div class="container" id="main">
-        <!-- 0. experience -->
-        <div class="portfolio_section row">
-            <div data-detect="my_name">제 이름은</div>
-            <div class="portfolio_emphasis_font_big fw-bold" data-detect="myeongkyu">전명규입니다.</div>
-            <pre data-detect="summary">저는 영어영문학을 전공한 백엔드 엔지니어입니다. 현재는 구직 상태에 있습니다.</pre>
-            <div class="nav-item d-flex align-self-center"><a href="#" class="btn btn-lg btn-outline-primary my-5"
-                    id="resume" data-detect="resume">이력서는 여기를 클릭하세요.</a></div>
+      <!-- 0. experience -->
+      <div class="portfolio_section row">
+        <div data-detect="my_name">제 이름은</div>
+        <div
+          class="portfolio_emphasis_font_big fw-bold"
+          data-detect="myeongkyu"
+        >
+          전명규입니다.
+        </div>
+        <pre data-detect="summary">
+저는 영어영문학을 전공한 백엔드 엔지니어입니다. 현재는 에이블 스쿨에서 머신러닝에 대해 공부하고 있습니다.</pre
+        >
+        <div class="nav-item d-flex align-self-center">
+          <a
+            href="#"
+            class="btn btn-lg btn-outline-primary my-5"
+            id="resume"
+            data-detect="resume"
+            >이력서는 여기를 클릭하세요.</a
+          >
+        </div>
+      </div>
+
+      <!-- 1. about -->
+      <div class="portfolio_section row" id="01_about">
+        <div class="col-md-8">
+          <div class="portfolio_emphasis_font fw-bold my-3" data-detect="about">
+            01. 자기소개
+          </div>
+          <!-- mobile photo -->
+          <div class="d-md-none d-block d-flex justify-content-center my-5">
+            <img
+              class="portfolio_photo_me rounded"
+              src="./images/photo_dark.png"
+              style="max-width: 70%; height: auto"
+            />
+          </div>
+          <pre data-detect="about_detail">
+            안녕하세요. 제 이름은 전명규라고 합니다. 저는 평소에 제가 하는 행위를 어떻게 하면 작업을 단순화시킬 수 있을지 고민을 많이 하는 편인데, 이런 성향 때문에 프로그래밍에 관심을 가지게 되었습니다. 현재는 백엔드 엔지니어지만 풀스택 엔지니어를 지향하고 있습니다.
+                    
+            저는 중앙대학교에서 영어영문학과 일어일문학을 전공했고 2년 동안 영어학원에서 강사로 일했습니다. 이후에 나라의 부름을 받아 공군 학사장교로 3년 3개월 동안 군복무를 수행하고, 프로그래밍에 흥미를 가지게 되어서 지금까지 이어오고 있습니다. 
+          
+            현재는 국비지원 it교육을 수료하고, KT 에이블 스쿨에서 빅데이터 관련 교육을 받고 있습니다. 또한 개인 사이트를 운영중입니다.
+          
+            제 기술 스택은 다음과 같습니다.
+          </pre>
+          <ul>
+            <li><b>Server</b>: AWS</li>
+            <li><b>Database</b>: MySQL, SQLite</li>
+            <li>
+              <b>Backend</b>: Spring, SpringBoot, Thymeleaf, JSP, Django,
+              Express.js, Wordpress
+            </li>
+            <li><b>Frontend</b>: HTML/CSS, JavaScript, Bootstrap</li>
+            <li><b>GUI</b>: JavaFX</li>
+            <li><b>Machine Learning</b>:Tensorflow</li>
+          </ul>
+        </div>
+        <!-- desktop photo -->
+        <div
+          class="d-md-block d-none col-md-4 d-flex justify-content-center align-items-center"
+        >
+          <img
+            class="portfolio_photo_me rounded"
+            src="./images/photo_dark.png"
+            style="max-width: 100%; height: auto"
+          />
+        </div>
+      </div>
+
+      <!-- 2. experience -->
+      <div class="portfolio_section row" id="02_experience">
+        <div
+          class="portfolio_emphasis_font fw-bold my-3"
+          data-detect="experience"
+        >
+          02. 경력사항
+        </div>
+        <!-- mobile list -->
+        <div class="d-block d-md-none row mx-auto" style="font-size: 20px">
+          <div
+            class="portfolio_experience_title col my-3 d-flex justify-content-between"
+            type="button"
+            id="btn_rokaf_mobile"
+          >
+            <span data-detect="rokaf">대한민국 공군</span>
+            <span class="text-secondary" style="font-size: 20px"
+              >2018. 3 ~ 2021. 5</span
+            >
+          </div>
+          <div
+            class="portfolio_experience_title col my-3 d-flex justify-content-between"
+            type="button"
+            id="btn_messi_mobile"
+          >
+            Messi
+            <span class="text-secondary" style="font-size: 20px"
+              >2016. 3 ~ 2018. 2</span
+            >
+          </div>
         </div>
 
-
-        <!-- 1. about -->
-        <div class="portfolio_section row" id="01_about">
-            <div class="col-md-8">
-                <div class="portfolio_emphasis_font fw-bold my-3" data-detect="about">01. 자기소개</div>
-                <!-- mobile photo -->
-                <div class="d-md-none d-block d-flex justify-content-center my-5">
-                    <img class="portfolio_photo_me rounded" src="./images/photo_dark.png"
-                        style="max-width:70%; height:auto;">
-                </div>
-                <pre data-detect="about_detail">  안녕하세요. 제 이름은 전명규라고 합니다. 저는 평소에 제가 하는 행위를 어떻게 하면 작업을 단순화시킬 수 있을지 고민을 많이 하는 편인데, 이런 성향 때문에 프로그래밍에 관심을 가지게 되었습니다. 현재는 백엔드 엔지니어지만 풀스택 엔지니어를 지향하고 있습니다.
-                        
-    저는 중앙대학교에서 영어영문학과 일어일문학을 전공했고 2년 동안 영어학원에서 강사로 일했습니다. 이후에 나라의 부름을 받아 공군 학사장교로 3년 3개월 동안 군복무를 수행하고, 프로그래밍에 흥미를 가지게 되어서 지금까지 이어오고 있습니다. 
-
-    현재는 국비지원 it교육을 수료하고, 개인적인 공부와 프로젝트를 진행 중에 있습니다.
-
-    제 기술 스택은 다음과 같습니다.</pre>
-                <ul>
-                    <li>MySQL</li>
-                    <li>Java, Spring, SpringBoot, WordPress</li>
-                    <li>HTML/CSS, Bootstrap, JavaScript, Thymeleaf, JSP</li>
-                    <li>AWS, Docker</li>
-                </ul>
-            </div>
-            <!-- desktop photo -->
-            <div class="d-md-block d-none col-md-4 d-flex justify-content-center align-items-center">
-                <img class="portfolio_photo_me rounded" src="./images/photo_dark.png"
-                    style="max-width:100%; height:auto;">
-            </div>
+        <!-- desktop list -->
+        <div
+          class="d-md-block d-none col-md-3 align-self-center ps-4"
+          style="font-size: 20px"
+        >
+          <div class="fw-bold" data-detect="development">개발직</div>
+          <hr style="width: 60%" />
+          <div class="fw-bold" data-detect="not_development">비개발직</div>
+          <div
+            class="portfolio_experience_title my-3"
+            type="button"
+            data-detect="rokaf"
+            id="btn_rokaf"
+            style="width: 60%"
+          >
+            대한민국 공군
+          </div>
+          <div
+            class="portfolio_experience_title my-3"
+            type="button"
+            id="btn_messi"
+            style="width: 60%"
+          >
+            Messi
+          </div>
         </div>
 
-        <!-- 2. experience -->
-        <div class="portfolio_section row" id="02_experience">
-            <div class="portfolio_emphasis_font fw-bold my-3" data-detect="experience">02. 경력사항</div>
-            <!-- mobile list -->
-            <div class="d-block d-md-none row mx-auto" style="font-size:20px;">
-                <div class="portfolio_experience_title col my-3 d-flex justify-content-between" type="button" 
-                    id="btn_rokaf_mobile">
-                    <span data-detect="rokaf">대한민국 공군</span>
-                    <span class="text-secondary" style="font-size: 20px;">2018. 3 ~ 2021. 5</span>
-                </div>
-                <div class="portfolio_experience_title col my-3 d-flex justify-content-between" type="button" id="btn_messi_mobile">
-                    Messi
-                    <span class="text-secondary" style="font-size: 20px;">2016. 3 ~ 2018. 2</span>
-                </div>
+        <div class="col-md-9">
+          <!-- rokaf -->
+          <div class="portfolio_experience" id="rokaf">
+            <!-- title -->
+            <div class="fw-bold">
+              <span data-detect="rokaf_career">기지중대장/작전통제장교</span
+              >&nbsp;<span class="text-primary" data-detect="rokaf_at"
+                >@ 대한민국 공군</span
+              >
             </div>
-
-            <!-- desktop list -->
-            <div class="d-md-block d-none col-md-3 align-self-center ps-4" style="font-size:20px;">
-                <div class="fw-bold" data-detect="development">개발직</div>
-                <hr style="width:60%">
-                <div class="fw-bold" data-detect="not_development">비개발직</div>
-                <div class="portfolio_experience_title my-3" type="button" data-detect="rokaf" id="btn_rokaf" style="width:60%">
-                    대한민국 공군
-                </div>
-                <div class="portfolio_experience_title my-3" type="button" id="btn_messi" style="width:60%">
-                    Messi
-                </div>
+            <!-- period -->
+            <div
+              class="d-md-block d-none text-secondary"
+              style="font-size: 20px"
+            >
+              2018. 3 ~ 2021. 5
             </div>
+            <!-- work -->
+            <ul>
+              <li
+                style="list-style-type: circle; font-size: 25px"
+                data-detect="rokaf_work_1"
+              >
+                부대의 총기탄약, 부대보급 등 전반적인 관리
+              </li>
+              <li
+                style="list-style-type: circle; font-size: 25px"
+                data-detect="rokaf_work_2"
+              >
+                다수의 병력 관리
+              </li>
+              <li
+                style="list-style-type: circle; font-size: 25px"
+                data-detect="rokaf_work_3"
+              >
+                교대근무를 진행하며 포대와 사령부에서의 중간 다리역할 수행
+              </li>
+            </ul>
+          </div>
 
-            <div class="col-md-9">
-                <!-- rokaf -->
-                <div class="portfolio_experience" id="rokaf">
-                    <!-- title -->
-                    <div class="fw-bold">
-                        <span data-detect="rokaf_career">기지중대장/작전통제장교</span>&nbsp;<span class="text-primary"
-                            data-detect="rokaf_at">@ 대한민국 공군</span>
-                    </div>
-                    <!-- period -->
-                    <div class="d-md-block d-none text-secondary" style="font-size: 20px;">2018. 3 ~ 2021. 5</div>
-                    <!-- work -->
-                    <ul>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_1">부대의 총기탄약,
-                            부대보급 등
-                            전반적인 관리</li>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_2">다수의 병력 관리
-                        </li>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="rokaf_work_3">교대근무를 진행하며
-                            포대와
-                            사령부에서의 중간 다리역할 수행</li>
-                    </ul>
-                </div>
-
-                <!-- messi -->
-                <div class="portfolio_experience" id="messi" style="display:none">
-                    <!-- title -->
-                    <div class="fw-bold">
-                        <span data-detect="messi_career">전임강사</span>&nbsp;<span class="text-primary"
-                            data-detect="messi_at">@ Messi</span>
-                    </div>
-                    <!-- period -->
-                    <div class="d-md-block d-none text-secondary" style="font-size: 20px;">2016. 3 ~ 2018. 2</div>
-                    <!-- work -->
-                    <ul>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_1">내신/수능/텝스 등의
-                            다수의
-                            영어 강의</li>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_2">수업 전 강의 계획 수립
-                        </li>
-                        <li style="list-style-type: circle; font-size:25px" data-detect="messi_work_3">수업을 위한 자체 교재
-                            및 자료
-                            제작</li>
-                    </ul>
-                </div>
+          <!-- messi -->
+          <div class="portfolio_experience" id="messi" style="display: none">
+            <!-- title -->
+            <div class="fw-bold">
+              <span data-detect="messi_career">전임강사</span>&nbsp;<span
+                class="text-primary"
+                data-detect="messi_at"
+                >@ Messi</span
+              >
             </div>
+            <!-- period -->
+            <div
+              class="d-md-block d-none text-secondary"
+              style="font-size: 20px"
+            >
+              2016. 3 ~ 2018. 2
+            </div>
+            <!-- work -->
+            <ul>
+              <li
+                style="list-style-type: circle; font-size: 25px"
+                data-detect="messi_work_1"
+              >
+                내신/수능/텝스 등의 다수의 영어 강의
+              </li>
+              <li
+                style="list-style-type: circle; font-size: 25px"
+                data-detect="messi_work_2"
+              >
+                수업 전 강의 계획 수립
+              </li>
+              <li
+                style="list-style-type: circle; font-size: 25px"
+                data-detect="messi_work_3"
+              >
+                수업을 위한 자체 교재 및 자료 제작
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. work -->
+      <div class="portfolio_section row" id="03_work">
+        <div class="portfolio_emphasis_font fw-bold my-3" data-detect="work">
+          03. 프로젝트
+        </div>
+        <div class="portfolio_emphasis_font">(1) Web Programming</div>
+
+        <!-- My Dictionary -->
+        <div class="portfolio_subsection row mx-auto">
+          <!-- description -->
+          <div class="col-md-5">
+            <div
+              class="text-md-end text-start"
+              style="font-size: 20px"
+              data-detect="work_solo"
+            >
+              개인 프로젝트
+            </div>
+            <div class="portfolio_emphasis_font_small text-md-end text-start">
+              My Dictionary
+            </div>
+            <!-- mobile photo -->
+            <div class="d-md-none d-block">
+              <img
+                class="portfolio_image_project border rounded"
+                src="./images/project/my_dictionary.png"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+                style="max-width: 100%; height: auto"
+              />
+            </div>
+            <div
+              class="border rounded my-3 p-3"
+              style="font-size: 25px"
+              data-detect="my_dictionary"
+            >
+              구글 확장프로그램(extension)을 통해 사전 사이트에서 단어를 해당
+              사이트에 저장한 후 테스트를 통해 학습하는 웹사이트입니다. 현재
+              운영중인 사이트에서 수익화가 완료되면 배포 예정입니다.
+            </div>
+            <div style="font-size: 20px">
+              <span class="border rounded">MySQL</span>&nbsp;
+              <span class="border rounded">SpringBoot</span>&nbsp;
+              <span class="border rounded">Thymeleaf</span>&nbsp;
+              <span class="border rounded">HTML/CSS</span>&nbsp;
+              <span class="border rounded">JavaScript</span>&nbsp;
+              <span class="border rounded">Bootstrap</span>&nbsp;
+            </div>
+            <div class="text-end">
+              <span
+                ><a
+                  href="https://github.com/foreverfl/-Web-My-Dictonary"
+                  target="_blank"
+                  ><img
+                    class="portfolio_image_noun"
+                    src="./images/noun/light/github.png"
+                    width="30px" /></a></span
+              >&nbsp;
+            </div>
+          </div>
+
+          <!-- desktop photo -->
+          <div class="d-md-block d-none col-md-7 d-md-flex align-items-center">
+            <img
+              class="portfolio_image_project border rounded"
+              src="./images/project/my_dictionary.png"
+              data-bs-toggle="modal"
+              data-bs-target="#modal"
+              style="max-width: 100%; height: auto"
+            />
+          </div>
         </div>
 
+        <!-- My Study Materials-->
+        <div class="portfolio_subsection row mx-auto">
+          <!-- desktop photo -->
+          <div class="d-md-block d-none col-md-7 d-md-flex align-items-center">
+            <img
+              class="portfolio_image_project border rounded"
+              src="./images/project/my_study_materials.png"
+              data-bs-toggle="modal"
+              data-bs-target="#modal"
+              style="max-width: 100%; height: auto"
+            />
+          </div>
 
-        <!-- 3. work -->
-        <div class="portfolio_section row" id="03_work">
-            <div class="portfolio_emphasis_font fw-bold my-3" data-detect="work">03. 프로젝트</div>
-            <!-- My Dictionary -->
-            <div class="portfolio_subsection row mx-auto">
-                <!-- desktop photo -->
-                <div class="d-md-block d-none col-md-7 d-md-flex align-items-center">
-                    <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
-                        data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
-                </div>
-                <div class="col-md-5">
-                    <div class="text-md-end text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
-                    <div class="portfolio_emphasis_font_small text-md-end text-start">My Dictionary</div>
-                    <!-- mobile photo -->
-                    <div class="d-md-none d-block">
-                        <img class="portfolio_image_project border rounded" src="./images/project/my_dictionary.png"
-                            data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
-                    </div>
-                    <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_dictionary"> 구글
-                        확장프로그램(extension)을 통해 사전 사이트에서 단어를
-                        해당 사이트에
-                        저장한 후 테스트를 통해 학습하는 웹사이트입니다. 차후에 앱 버전 개발 예정입니다.
-                    </div>
-                    <div style="font-size: 20px;">
-                        <span class="border rounded">MySQL</span>&nbsp;
-                        <span class="border rounded">SpringBoot</span>&nbsp;
-                        <span class="border rounded">Thymeleaf</span>&nbsp;
-                        <span class="border rounded">HTML/CSS</span>&nbsp;
-                        <span class="border rounded">JavaScript</span>&nbsp;
-                        <span class="border rounded">Bootstrap</span>&nbsp;
-                    </div>
-                    <div class="text-end">
-                        <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
-                                    width="30px"></a></span>&nbsp;
-                        <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/external_link.png"
-                                    width="30px"></a></span>&nbsp;
-                    </div>
-                </div>
+          <!-- description -->
+          <div class="col-md-5">
+            <div
+              class="text-start"
+              style="font-size: 20px"
+              data-detect="work_solo"
+            >
+              개인 프로젝트
             </div>
-
-            <!-- MyTube-->
-            <div class="portfolio_subsection row mx-auto">
-                <div class="col-md-5">
-                    <div class="text-start" style="font-size:20px" data-detect="work_solo">개인 프로젝트</div>
-                    <div class="portfolio_emphasis_font_small text-start">MyTube</div>
-                    <!-- mobile photo -->
-                    <div class="d-md-none d-block">
-                        <img class="portfolio_image_project border rounded" src="./images/project/my_tube.png"
-                            data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
-                    </div>
-                    <div class="border rounded my-3 p-3" style="font-size:25px;" data-detect="my_tube"> 유튜브 형태의 뷰에
-                        간단한
-                        로그인 기능을 추가했습니다.</div>
-                    <div style="font-size: 20px;">
-                        <span class="border rounded">Oracle</span>&nbsp;
-                        <span class="border rounded">Spring</span>&nbsp;
-                        <span class="border rounded">JSP</span>&nbsp;
-                        <span class="border rounded">HTML/CSS</span>&nbsp;
-                        <span class="border rounded">JavaScript</span>&nbsp;
-                        <span class="border rounded">Bootstrap</span>&nbsp;
-                    </div>
-                    <div class="text-md-start text-end">
-                        <span><a href="#"><img class="portfolio_image_noun" src="./images/noun/light/github.png"
-                                    width="30px"></a></span>&nbsp;
-                    </div>
-                </div>
-                <!-- desktop photo -->
-                <div class="d-none d-md-block col-md-7 d-md-flex align-items-center">
-                    <img class="portfolio_image_project border rounded" src="./images/project/my_tube.png"
-                        data-bs-toggle="modal" data-bs-target="#modal" style="max-width:100%; height:auto;">
-                </div>
+            <div class="portfolio_emphasis_font_small text-start">
+              My Study Materials
             </div>
+            <!-- mobile photo -->
+            <div class="d-md-none d-block">
+              <img
+                class="portfolio_image_project border rounded"
+                src="./images/project/my_study_materials.png"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+                style="max-width: 100%; height: auto"
+              />
+            </div>
+            <div
+              class="border rounded my-3 p-3"
+              style="font-size: 25px"
+              data-detect="my_study_materials"
+            >
+              개인 공부 자료를 정리할 수 있는 웹사이트입니다. 현재 제가 정리한
+              리눅스 공부 정리 자료만 존재합니다. AWS를 통해서 서비스를 하고
+              있으며, 수익화 예정에 있습니다.
+            </div>
+            <div style="font-size: 20px">
+              <span class="border rounded">AWS</span>&nbsp;
+              <span class="border rounded">MySQL</span>&nbsp;
+              <span class="border rounded">Django</span>&nbsp;
+              <span class="border rounded">HTML/CSS</span>&nbsp;
+              <span class="border rounded">JavaScript</span>&nbsp;
+              <span class="border rounded">Bootstrap</span>&nbsp;
+            </div>
+            <div class="text-md-start text-end">
+              <span
+                ><a
+                  href="https://github.com/foreverfl/-Web-My-Study-Materials"
+                  target="_blank"
+                  ><img
+                    class="portfolio_image_noun"
+                    src="./images/noun/light/github.png"
+                    width="30px" /></a></span
+              >&nbsp;
+              <span
+                ><a href="https://mystudymaterials.xyz" target="_blank"
+                  ><img
+                    class="portfolio_image_noun"
+                    src="./images/noun/light/external_link.png"
+                    width="30px" /></a></span
+              >&nbsp;
+            </div>
+          </div>
         </div>
+
+        <div class="portfolio_emphasis_font">(2) GUI Programming</div>
+        <!-- Manage Words -->
+        <div class="portfolio_subsection row mx-auto">
+          <!-- description -->
+          <div class="col-md-5">
+            <div
+              class="text-md-end text-start"
+              style="font-size: 20px"
+              data-detect="work_solo"
+            >
+              개인 프로젝트
+            </div>
+            <div class="portfolio_emphasis_font_small text-md-end text-start">
+              Manage Words
+            </div>
+            <!-- mobile photo -->
+            <div class="d-md-none d-block">
+              <img
+                class="portfolio_image_project border rounded"
+                src="./images/project/manage_words.png"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+                style="max-width: 100%; height: auto"
+              />
+            </div>
+            <div
+              class="border rounded my-3 p-3"
+              style="font-size: 25px"
+              data-detect="manage_words"
+            >
+              과외를 할 때 학생들의 단어를 체계적으로 관리하기 위해서 만든 개인
+              용도 프로그램입니다.
+            </div>
+            <div style="font-size: 20px">
+              <span class="border rounded">SQLite</span>&nbsp;
+              <span class="border rounded">JavaFX</span>&nbsp;
+            </div>
+            <div class="text-end">
+              <span
+                ><a
+                  href="https://github.com/foreverfl/-Software-Manage-Words"
+                  target="_blank"
+                  ><img
+                    class="portfolio_image_noun"
+                    src="./images/noun/light/github.png"
+                    width="30px" /></a></span
+              >&nbsp;
+            </div>
+          </div>
+
+          <!-- desktop photo -->
+          <div class="d-md-block d-none col-md-7 d-md-flex align-items-center">
+            <img
+              class="portfolio_image_project border rounded"
+              src="./images/project/manage_words.png"
+              data-bs-toggle="modal"
+              data-bs-target="#modal"
+              style="max-width: 100%; height: auto"
+            />
+          </div>
+        </div>
+
+        <!-- My Video Viewer -->
+        <div class="portfolio_subsection row mx-auto">
+          <!-- desktop photo -->
+          <div class="d-md-block d-none col-md-7 d-md-flex align-items-center">
+            <img
+              class="portfolio_image_project border rounded"
+              src="./images/project/my_video_viewer.png"
+              data-bs-toggle="modal"
+              data-bs-target="#modal"
+              style="max-width: 100%; height: auto"
+            />
+          </div>
+
+          <!-- description -->
+          <div class="col-md-5">
+            <div
+              class="text-start"
+              style="font-size: 20px"
+              data-detect="work_solo"
+            >
+              개인 프로젝트
+            </div>
+            <div class="portfolio_emphasis_font_small text-start">
+              My Video Viewer
+            </div>
+            <!-- mobile photo -->
+            <div class="d-md-none d-block">
+              <img
+                class="portfolio_image_project border rounded"
+                src="./images/project/my_video_viewer.png"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+                style="max-width: 100%; height: auto"
+              />
+            </div>
+            <div
+              class="border rounded my-3 p-3"
+              style="font-size: 25px"
+              data-detect="my_video_viewer"
+            >
+              프로그램을 통해서 로컬호스트를 열어서, 컴퓨터에 저장된 폴더에서
+              동영상을 가져와서 Tiktok처럼 무작위로 볼 수 있도록 하는
+              프로그램입니다. 컴퓨터에 저장된 영상을 모바일로 랜덤재생을 해서
+              보기 위해서 만든 개인용 프로그램입니다.
+            </div>
+            <div style="font-size: 20px">
+              <span class="border rounded">Electron</span>&nbsp;
+              <span class="border rounded">Express.js</span>&nbsp;
+              <span class="border rounded">HTML/CSS</span>&nbsp;
+              <span class="border rounded">JavaScript</span>&nbsp;
+              <span class="border rounded">Bootstrap</span>&nbsp;
+            </div>
+            <div class="text-md-start text-end">
+              <span
+                ><a
+                  href="https://github.com/foreverfl/-Web-MyVideoViewer"
+                  target="_blank"
+                  ><img
+                    class="portfolio_image_noun"
+                    src="./images/noun/light/github.png"
+                    width="30px" /></a></span
+              >&nbsp;
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- sidebar -->
-    <div class="d-md-flex flex-md-column d-flex flex-row justify-content-center mb-3" id="sidebar">
-        <a class="py-md-2 mx-md-0 mx-3" href="https://github.com/foreverfl" target="_blank"><img class="portfolio_image_noun"
-                src="./images/noun/light/github.png" style="width: 30px"></a>
-        <a class="py-md-2 mx-md-0 mx-3" href="https://www.instagram.com/foreverfl/" target="_blank"><img class="portfolio_image_noun"
-                src="./images/noun/light/insta.png" style="width: 30px"></a>
-        <a class="py-md-2 mx-md-0 mx-3" href="http://tarotaro90.com/" target="_blank"><img class="portfolio_image_noun"
-                src="./images/noun/light/wordpress.png" style="width: 30px"></a>
+    <div
+      class="d-md-flex flex-md-column d-flex flex-row justify-content-center mb-3"
+      id="sidebar"
+    >
+      <a
+        class="py-md-2 mx-md-0 mx-3"
+        href="https://github.com/foreverfl"
+        target="_blank"
+        ><img
+          class="portfolio_image_noun"
+          src="./images/noun/light/github.png"
+          style="width: 30px"
+      /></a>
+      <a
+        class="py-md-2 mx-md-0 mx-3"
+        href="https://www.instagram.com/foreverfl/"
+        target="_blank"
+        ><img
+          class="portfolio_image_noun"
+          src="./images/noun/light/insta.png"
+          style="width: 30px"
+      /></a>
+      <a
+        class="py-md-2 mx-md-0 mx-3"
+        href="http://tarotaro90.com/"
+        target="_blank"
+        ><img
+          class="portfolio_image_noun"
+          src="./images/noun/light/wordpress.png"
+          style="width: 30px"
+      /></a>
     </div>
 
     <!-- footer -->
-    <div class="text-secondary text-center mb-5" style="font-size:25px;">
-        Designed & Built by Myeongkyu Jeon
+    <div class="text-secondary text-center mb-5" style="font-size: 25px">
+      Designed & Built by Myeongkyu Jeon
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true" style="cursor: pointer;">
-        <div
-            class="modal-dialog modal-dialog-centered modal-fullscreen d-flex justify-content-center align-items-center">
-        </div>
+    <div
+      class="modal fade"
+      id="modal"
+      tabindex="-1"
+      aria-hidden="true"
+      style="cursor: pointer"
+    >
+      <div
+        class="modal-dialog modal-dialog-centered modal-fullscreen d-flex justify-content-center align-items-center"
+      ></div>
     </div>
-
-</body>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+  </body>
+  <!-- JavaScript Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-    crossorigin="anonymous"></script>
-<script type="text/javascript" src="./js/i18n.js"></script>
-<script type="text/javascript" src="./js/convertTheme.js"></script>
-<script>
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript" src="./js/i18n.js"></script>
+  <script type="text/javascript" src="./js/convertTheme.js"></script>
+  <script>
     showResume();
-    function showResume(){
-        const resume = document.querySelector('#resume');
-        console.log(resume);
+    function showResume() {
+      const resume = document.querySelector("#resume");
+      console.log(resume);
 
-        resume.addEventListener('click', function(){
-            if(localStorage.getItem('language') === 'en') {
-                alert('My English resume is not yet ready');
-            } else if(localStorage.getItem('language') === 'ja') {
-                alert('まだ履歴書が準備しておりません。');
-            } else if(localStorage.getItem('language') == 'ko') {
-                window.location.href = 'https://github.com/foreverfl/-Web-Portfolio/blob/main/resumes/resume_korean.pdf';
-            } 
-        });
-    };
+      resume.addEventListener("click", function () {
+        if (localStorage.getItem("language") === "en") {
+          alert("My English resume is not yet ready");
+        } else if (localStorage.getItem("language") === "ja") {
+          alert("まだ履歴書が準備しておりません。");
+        } else if (localStorage.getItem("language") == "ko") {
+          window.location.href =
+            "https://github.com/foreverfl/-Web-Portfolio/blob/main/resumes/resume_korean.pdf";
+        }
+      });
+    }
 
     addNavbarEvent();
     function addNavbarEvent() {
-        const headers = document.querySelectorAll('header');
+      const headers = document.querySelectorAll("header");
 
-        let lastScrollTop = 100;
+      let lastScrollTop = 100;
 
-        window.addEventListener("scroll", function () {
-            let st = window.pageYOffset || document.documentElement.scrollTop;
-            if (st > lastScrollTop) {
-                // down
-                for (let i = 0; i < headers.length; i++) {
-                    headers[i].classList.remove('navbar_fix');
-                }
-
-            } else {
-                // up
-                for (let i = 0; i < headers.length; i++) {
-                    headers[i].classList.add('navbar_fix');
-                }
+      window.addEventListener(
+        "scroll",
+        function () {
+          let st = window.pageYOffset || document.documentElement.scrollTop;
+          if (st > lastScrollTop) {
+            // down
+            for (let i = 0; i < headers.length; i++) {
+              headers[i].classList.remove("navbar_fix");
             }
-            lastScrollTop = st <= 100 ? 100 : st; // for mobile or negative scrolling
-        }, false);
+          } else {
+            // up
+            for (let i = 0; i < headers.length; i++) {
+              headers[i].classList.add("navbar_fix");
+            }
+          }
+          lastScrollTop = st <= 100 ? 100 : st; // for mobile or negative scrolling
+        },
+        false
+      );
 
+      const navContents = document.querySelectorAll(".portfolio_nav_content");
+      for (let i = 0; i < navContents.length; i++) {
+        navContents[i].addEventListener("mouseover", function () {
+          navContents[i].style.cursor = "pointer";
+          navContents[i].classList.replace("text-dark", "text-primary");
+        });
 
-        const navContents = document.querySelectorAll('.portfolio_nav_content');
-        for (let i = 0; i < navContents.length; i++) {
-            navContents[i].addEventListener('mouseover', function () {
-
-                navContents[i].style.cursor = 'pointer';
-                navContents[i].classList.replace('text-dark', 'text-primary');
-
-            });
-
-            navContents[i].addEventListener('mouseleave', function () {
-
-                navContents[i].style.cursor = 'pointer';
-                navContents[i].classList.replace('text-primary', 'text-dark');
-
-            });
-        }
+        navContents[i].addEventListener("mouseleave", function () {
+          navContents[i].style.cursor = "pointer";
+          navContents[i].classList.replace("text-primary", "text-dark");
+        });
+      }
     }
 
     setTimeout(addProfilePhotoEvent, 0);
     function addProfilePhotoEvent() {
-        let portfolioPhotoMes = document.querySelectorAll('.portfolio_photo_me');
+      let portfolioPhotoMes = document.querySelectorAll(".portfolio_photo_me");
 
-        for (let i = 0; i < portfolioPhotoMes.length; i++) {
+      for (let i = 0; i < portfolioPhotoMes.length; i++) {
+        (function (x) {
+          portfolioPhotoMes[x].addEventListener("mouseover", function () {
+            portfolioPhotoMes[x].setAttribute("src", "./images/photo.png");
+            portfolioPhotoMes[x].style.boxShadow = "5px 5px 5px #000";
+          });
 
-            (function (x) {
-                portfolioPhotoMes[x].addEventListener('mouseover', function () {
-                    portfolioPhotoMes[x].setAttribute('src', './images/photo.png');
-                    portfolioPhotoMes[x].style.boxShadow = '5px 5px 5px #000';
-                });
-
-                portfolioPhotoMes[x].addEventListener('mouseleave', function () {
-                    portfolioPhotoMes[x].setAttribute('src', './images/photo_dark.png');
-                    portfolioPhotoMes[x].style.boxShadow = '15px 15px 15px #000';
-                });
-            })(i);
-
-
-
-        }
+          portfolioPhotoMes[x].addEventListener("mouseleave", function () {
+            portfolioPhotoMes[x].setAttribute("src", "./images/photo_dark.png");
+            portfolioPhotoMes[x].style.boxShadow = "15px 15px 15px #000";
+          });
+        })(i);
+      }
     }
 
     addExperienceEvent();
     function addExperienceEvent() {
+      const portfolioExperience = document.querySelectorAll(
+        ".portfolio_experience"
+      );
+      const btnRokaf = document.querySelector("#btn_rokaf");
+      const btnRokafMobile = document.querySelector("#btn_rokaf_mobile");
+      const rokaf = document.querySelector("#rokaf");
 
-        const portfolioExperience = document.querySelectorAll('.portfolio_experience');
-        const btnRokaf = document.querySelector('#btn_rokaf');
-        const btnRokafMobile = document.querySelector('#btn_rokaf_mobile');
-        const rokaf = document.querySelector('#rokaf');
+      btnRokaf.addEventListener("click", function () {
+        for (let i = 0; i < portfolioExperience.length; i++) {
+          portfolioExperience[i].style.display = "none";
+        }
+        rokaf.style.display = "block";
+      });
 
-        btnRokaf.addEventListener('click', function () {
-            for (let i = 0; i < portfolioExperience.length; i++) {
-                portfolioExperience[i].style.display = 'none';
-            }
-            rokaf.style.display = 'block';
-        });
+      btnRokafMobile.addEventListener("click", function () {
+        for (let i = 0; i < portfolioExperience.length; i++) {
+          portfolioExperience[i].style.display = "none";
+        }
+        rokaf.style.display = "block";
+      });
 
-        btnRokafMobile.addEventListener('click', function () {
-            for (let i = 0; i < portfolioExperience.length; i++) {
-                portfolioExperience[i].style.display = 'none';
-            }
-            rokaf.style.display = 'block';
-        });
+      const btnMessi = document.querySelector("#btn_messi");
+      const btnMessiMobile = document.querySelector("#btn_messi_mobile");
+      const messi = document.querySelector("#messi");
 
+      btnMessi.addEventListener("click", function () {
+        for (let i = 0; i < portfolioExperience.length; i++) {
+          portfolioExperience[i].style.display = "none";
+        }
+        messi.style.display = "block";
+      });
 
-        const btnMessi = document.querySelector('#btn_messi');
-        const btnMessiMobile = document.querySelector('#btn_messi_mobile');
-        const messi = document.querySelector('#messi');
-
-        btnMessi.addEventListener('click', function () {
-            for (let i = 0; i < portfolioExperience.length; i++) {
-                portfolioExperience[i].style.display = 'none';
-            }
-            messi.style.display = 'block';
-        });
-
-        btnMessiMobile.addEventListener('click', function () {
-            for (let i = 0; i < portfolioExperience.length; i++) {
-                portfolioExperience[i].style.display = 'none';
-            }
-            messi.style.display = 'block';
-        });
+      btnMessiMobile.addEventListener("click", function () {
+        for (let i = 0; i < portfolioExperience.length; i++) {
+          portfolioExperience[i].style.display = "none";
+        }
+        messi.style.display = "block";
+      });
     }
 
     addModalImageEvent();
     function addModalImageEvent() {
-        const portfolioImageProjects = document.querySelectorAll('.portfolio_image_project');
+      const portfolioImageProjects = document.querySelectorAll(
+        ".portfolio_image_project"
+      );
 
-        for (let i = 0; i < portfolioImageProjects.length; i++) {
+      for (let i = 0; i < portfolioImageProjects.length; i++) {
+        portfolioImageProjects[i].addEventListener("click", function () {
+          const path_imageProject =
+            portfolioImageProjects[i].getAttribute("src");
 
-            portfolioImageProjects[i].addEventListener('click', function () {
-                const path_imageProject = portfolioImageProjects[i].getAttribute('src');
-
-                const modalBody = document.querySelector('.modal-dialog');
-                modalBody.innerHTML = '<img class="rounded" src="' + path_imageProject + '" data-bs-dismiss="modal" style="max-width:100%; height:auto;">'
-
-            });
-
-        }
-
+          const modalBody = document.querySelector(".modal-dialog");
+          modalBody.innerHTML =
+            '<img class="rounded" src="' +
+            path_imageProject +
+            '" data-bs-dismiss="modal" style="max-width:100%; height:auto;">';
+        });
+      }
     }
-
-</script>
-
+  </script>
 </html>

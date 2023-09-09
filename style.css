@@ -1,0 +1,133 @@
+@font-face {
+  font-family: "basic";
+  src: url("./fonts/NanumPenScript-Regular.ttf");
+}
+
+@font-face {
+  font-family: "basic";
+  src: url("./fonts/KiwiMaru-Regular.ttf");
+  unicode-range: U+3001, U+3002, U+300C-300F, U+3041-3096, U+309D, U+309E,
+    U+30A1-30FA, U+30FC, U+4E00-9FEA, U+3400-4DB5, U+FF5E, U+F900-FA6D;
+}
+
+@font-face {
+  font-family: "emphasis";
+  src: url("./fonts/Jua-Regular.ttf");
+}
+
+@font-face {
+  font-family: "emphasis";
+  src: url("./fonts/PottaOne-Regular.ttf");
+  unicode-range: U+3001, U+3002, U+300C-300F, U+3041-3096, U+309D, U+309E,
+    U+30A1-30FA, U+30FC, U+4E00-9FEA, U+3400-4DB5, U+FF5E, U+F900-FA6D;
+}
+
+body {
+  position: relative;
+  font-family: "basic";
+  font-size: 30px;
+}
+
+pre {
+  font-family: "basic";
+  font-size: 30px;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+.portfolio_emphasis_font {
+  font-family: "emphasis";
+}
+
+.portfolio_emphasis_font_big {
+  font-family: "emphasis";
+  font-size: 50px;
+}
+
+.portfolio_emphasis_font_small {
+  font-family: "emphasis";
+  font-size: 20px;
+}
+
+.portfolio_section {
+  margin-top: 350px;
+  margin-bottom: 350px;
+}
+
+.portfolio_subsection {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* navbar*/
+.navbar_fix {
+  position: fixed;
+  z-index: 100000;
+  width: 90%;
+  top: 0px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  background-color: white;
+  animation: down 1s ease;
+}
+
+@media (max-width: 576px) {
+  .navbar_fix {
+    width: 100%;
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(-50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.dropdown-menu {
+  min-width: 80px;
+  margin-left: -50px;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .dropdown-menu {
+    min-width: 80px;
+    margin-left: 30px;
+  }
+}
+
+/* body */
+#photo_me {
+  box-shadow: 15px 15px 15px #000;
+}
+
+.portfolio_experience_title:hover {
+  background-color: rgb(219, 219, 219);
+  cursor: pointer;
+}
+
+.portfolio_image_project {
+  cursor: pointer;
+}
+
+/* sidebar */
+#sidebar {
+  width: 50px;
+  position: sticky;
+  left: 20px;
+  bottom: 20px;
+}
+
+@media (max-width: 576px) {
+  #sidebar {
+    width: auto;
+    position: relative;
+    left: auto;
+    bottom: auto;
+  }
+}

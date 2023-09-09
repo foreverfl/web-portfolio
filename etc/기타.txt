@@ -1,0 +1,7 @@
+Summary
+저는 영어영문학을 전공한 백엔드 엔지니어입니다. 현재는 에이블스쿨에서 머신러닝에 대해 공부하고 있습니다.
+
+I am a back-end engineer with a degree in English Language and Literature. I am currently studying machine learning."
+
+私は英語文学を専攻したバックエンドエンジニアです。現在、機械学習を学んでいます。
+

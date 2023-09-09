@@ -1,0 +1,38 @@
+한국어
+  안녕하세요. 제 이름은 전명규라고 합니다. 저는 평소에 제가 하는 행위를 어떻게 하면 작업을 단순화시킬 수 있을지 고민을 많이 하는 편인데, 이런 성향 때문에 프로그래밍에 관심을 가지게 되었습니다. 현재는 백엔드 엔지니어지만 풀스택 엔지니어를 지향하고 있습니다.
+                    
+  저는 중앙대학교에서 영어영문학과 일어일문학을 전공했고 2년 동안 영어학원에서 강사로 일했습니다. 이후에 나라의 부름을 받아 공군 학사장교로 3년 3개월 동안 군복무를 수행하고, 프로그래밍에 흥미를 가지게 되어서 지금까지 이어오고 있습니다. 
+
+  현재는 국비지원 it교육을 수료하고, KT 에이블 스쿨에서 빅데이터 관련 교육을 받고 있습니다. 또한 개인 사이트를 운영중입니다. 추후에는 Linux, AWS, Network에 대해서 공부할 예정에 있습니다.
+
+  제 기술 스택은 다음과 같습니다.
+
+일본어
+  初めまして。私は全銘揆（ジョンミョンギュウ）と申します。普段から、どうすれば作業を効率化できるか考えることが多いです。この性格がきっかけで、プログラミングに関心を持ちました。現在はバックエンドエンジニアですが、将来はフルスタックエンジニアを目指しています。
+
+  私は韓国の中央大学で英語英文学と日語日文学を専攻しました。卒業後、2年間英語塾で教師として働き、その後、空軍の士官として3年間勤務しました。途中でプログラミングに興味を持ち、それからはプログラミングを続けています。
+
+  現在は、国で提供するIT教育を修了し、韓国の通信企業KTが運営するビッグデータ教育を受けています。また、個人サイトを運営中です。近い将来、Linux、AWS、ネットワークについて学ぶ予定です。
+
+  私の技術スタックは次のとおりです。
+
+영어
+  Hello. My name is Myeongkyu Jeon. I usually agonize about how I can simplify what I do and this tendency led me to become interested in programming. Currently, I am a back-end engineer, but I aspire to become a full-stack engineer.
+
+  I majored in English/Japanese Language & Literature at ChungAng University and worked as an English educator for 2 years. After that, I served as an officer in the Korean Air Force for 3 years and 3 months. During my military service, I became interested in programming and I have been programming.
+
+  I completed a national IT education program and am enrolled in a machine learning program at KT AIVLE School, which is run by KT, a South Korean telecommunications company. I'm also managing my own website. I am planning to study Linux, AWS, and Networking in the near future.
+
+  My tech stack is as follows.
+
+
+===========
+
+한국어
+  안녕하세요. 제 이름은 전명규라고 합니다. 저는 평소에 제가 하는 행위를 어떻게 하면 작업을 단순화시킬 수 있을지 고민을 많이 하는 편인데, 이런 성향 때문에 프로그래밍에 관심을 가지게 되었습니다. 현재는 백엔드 엔지니어지만 풀스택 엔지니어를 지향하고 있습니다.\n\n  저는 중앙대학교에서 영어영문학과 일어일문학을 전공했고 2년 동안 영어학원에서 강사로 일했습니다. 이후에 나라의 부름을 받아 공군 학사장교로 3년 3개월 동안 군복무를 수행하고, 프로그래밍에 흥미를 가지게 되어서 지금까지 이어오고 있습니다.\n\n  현재는 국비지원 it교육을 수료하고, KT 에이블 스쿨에서 빅데이터 관련 교육을 받고 있습니다. 또한 개인 사이트를 운영중입니다.\n\n  제 기술 스택은 다음과 같습니다.
+
+일본어
+  初めまして。私は全銘揆（ジョンミョンギュウ）と申します。普段から、どうすれば作業を効率化できるか考えることが多いです。この性格がきっかけで、プログラミングに関心を持ちました。現在はバックエンドエンジニアですが、将来はフルスタックエンジニアを目指しています。\n\n   私は韓国の中央大学で英語英文学と日語日文学を専攻しました。卒業後、2年間英語塾で教師として働き、その後、空軍の士官として3年間勤務しました。途中でプログラミングに興味を持ち、それからはプログラミングを続けています。\n\n  現在は、国で提供するIT教育を修了し、韓国の通信企業KTが運営するビッグデータ教育を受けています。また、個人サイトを運営中です。\n\n  私の技術スタックは次のとおりです。
+
+영어
+  Hello. My name is Myeongkyu Jeon. I usually agonize about how I can simplify what I do and this tendency led me to become interested in programming. Currently, I am a back-end engineer, but I aspire to become a full-stack engineer.\n\n  I majored in English/Japanese Language & Literature at ChungAng University and worked as an English educator for 2 years. After that, I served as an officer in the Korean Air Force for 3 years and 3 months. During my military service, I became interested in programming and I have been programming.\n\n  I completed a national IT education program and am enrolled in a machine learning program at KT AIVLE School, which is run by KT, a South Korean telecommunications company. I'm also managing my own website.\n\n  My tech stack is as follows.
