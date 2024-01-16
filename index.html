@@ -11,7 +11,7 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link rel="favicon" href="./favicon.ico" />
+    <link rel="icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./style.css" />
     <title>portfolio</title>
   </head>
@@ -228,7 +228,7 @@
           </pre>
           <ul>
             <li><b>Server</b>: AWS, Docker</li>
-            <li><b>Database</b>: MySQL, PostgreSQL, SQLite</li>
+            <li><b>Database</b>: MySQL, PostgreSQL, SQLite, Redis</li>
             <li>
               <b>Backend</b>: Spring, SpringBoot, Django, Express.js, Wordpress
             </li>
@@ -514,6 +514,7 @@
               <span class="border rounded p-1">HTML/CSS</span>&nbsp;
               <span class="border rounded p-1">JavaScript</span>&nbsp;
               <span class="border rounded p-1">Bootstrap</span>&nbsp;
+              <span class="border rounded p-1">AWS</span>&nbsp;
             </div>
             <div class="text-md-start text-end">
               <span
@@ -533,6 +534,74 @@
                     width="30px" /></a></span
               >&nbsp;
             </div>
+          </div>
+        </div>
+
+        <!-- O :D -->
+        <div class="portfolio_subsection row mx-auto">
+          <!-- description -->
+          <div class="col-md-5">
+            <div
+              class="text-md-end text-start"
+              style="font-size: 20px"
+              data-detect="od_work_team"
+            >
+              팀 프로젝트 / 백엔드·프론트엔드 통합
+            </div>
+            <div class="portfolio_emphasis_font_small text-md-end text-start">
+              O :D
+            </div>
+            <!-- mobile photo -->
+            <div class="d-md-none d-block">
+              <img
+                class="portfolio_image_project border rounded"
+                src="./images/project/od.png"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+                data-detect="od_modal"
+                style="max-width: 100%; height: auto"
+              />
+            </div>
+            <div
+              class="border rounded my-3 p-3"
+              style="font-size: 25px"
+              data-detect="od"
+            >
+              사용자가 원하는 책을 신청받아서 등록하고 해당 책을 tts와 rvc를
+              활용한 AI를 통해 원하는 목소리로 읽어주는 서비스입니다.
+              온프레미스로 배포 예정에 있습니다.
+            </div>
+            <div style="font-size: 20px; line-height: 2.5">
+              <span class="border rounded p-1">PyTorch</span>&nbsp;
+              <span class="border rounded p-1">PostgreSQL</span>&nbsp;
+              <span class="border rounded p-1">Redis</span>&nbsp;
+              <span class="border rounded p-1">Django</span>&nbsp;
+              <span class="border rounded p-1">HTML/CSS</span>&nbsp;
+              <span class="border rounded p-1">SCSS</span>&nbsp;
+              <span class="border rounded p-1">JavaScript</span>&nbsp;
+              <span class="border rounded p-1">Bootstrap</span>&nbsp;
+            </div>
+            <div class="text-end">
+              <span
+                ><a href="https://github.com/foreverfl/-Web-OD" target="_blank"
+                  ><img
+                    class="portfolio_image_noun"
+                    src="./images/noun/light/github.png"
+                    width="30px" /></a></span
+              >&nbsp;
+            </div>
+          </div>
+
+          <!-- desktop photo -->
+          <div class="d-md-block d-none col-md-7 d-md-flex align-items-center">
+            <img
+              class="portfolio_image_project border rounded"
+              src="./images/project/od.png"
+              data-bs-toggle="modal"
+              data-bs-target="#modal"
+              data-detect="od_modal"
+              style="max-width: 100%; height: auto"
+            />
           </div>
         </div>
 
@@ -697,12 +766,12 @@
       /></a>
     </div>
 
-    <!-- footer -->
+    <!-- Footer -->
     <div class="text-secondary text-center mb-5" style="font-size: 25px">
       Designed & Built by Myeongkyu Jeon
     </div>
 
-    <!-- Modal -->
+    <!-- Modal Photo -->
     <div
       class="modal fade"
       id="modal"
@@ -727,7 +796,6 @@
     showResume();
     function showResume() {
       const resume = document.querySelector("#resume");
-      console.log(resume);
 
       resume.addEventListener("click", function () {
         if (localStorage.getItem("language") === "en") {
@@ -852,12 +920,22 @@
         portfolioImageProjects[i].addEventListener("click", function () {
           const path_imageProject =
             portfolioImageProjects[i].getAttribute("src");
+          const dataDetect =
+            portfolioImageProjects[i].getAttribute("data-detect");
 
           const modalBody = document.querySelector(".modal-dialog");
-          modalBody.innerHTML =
-            '<img class="rounded" src="' +
-            path_imageProject +
-            '" data-bs-dismiss="modal" style="max-width:100%; height:auto;">';
+
+          if (dataDetect === "od_modal") {
+            modalBody.innerHTML =
+              '<video width="100%" height="auto" controls style="max-width: 30%; margin: auto; pointer-events: auto;">' +
+              '<source src="./images/project/od_play.mp4" type="video/mp4">' +
+              "</video>";
+          } else {
+            modalBody.innerHTML =
+              '<img class="rounded" src="' +
+              path_imageProject +
+              '" data-bs-dismiss="modal" style="max-width:100%; height:auto;">';
+          }
         });
       }
     }

@@ -1,8 +1,11 @@
+/* 폰트 */
+/* 한글 기본 */
 @font-face {
   font-family: "basic";
   src: url("./fonts/NanumPenScript-Regular.ttf");
 }
 
+/* 일본어 기본 */
 @font-face {
   font-family: "basic";
   src: url("./fonts/KiwiMaru-Regular.ttf");
