@@ -801,7 +801,8 @@
         if (localStorage.getItem("language") === "en") {
           alert("My English resume is not yet ready");
         } else if (localStorage.getItem("language") === "ja") {
-          alert("まだ履歴書が準備しておりません。");
+          window.location.href =
+            "https://github.com/foreverfl/-Web-Portfolio/blob/main/resumes/resume_japanese.pdf";
         } else if (localStorage.getItem("language") == "ko") {
           window.location.href =
             "https://github.com/foreverfl/-Web-Portfolio/blob/main/resumes/resume_korean.pdf";
@@ -849,7 +850,13 @@
       }
     }
 
-    setTimeout(addProfilePhotoEvent, 0);
+    // 이미지 프리 로딩
+    document.addEventListener("DOMContentLoaded", function () {
+      const img = new Image();
+      img.src = "./images/photo.png";
+    });
+
+    addProfilePhotoEvent();
     function addProfilePhotoEvent() {
       let portfolioPhotoMes = document.querySelectorAll(".portfolio_photo_me");
 
