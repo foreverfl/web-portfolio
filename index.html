@@ -66,32 +66,23 @@
               aria-expanded="false"
             >
               <span>04.&nbsp;</span
-              ><span class="text-dark portfolio_nav_content">Languages</span>
+              ><span class="text-dark portfolio_nav_content pe-auto"
+                >Languages</span
+              >
             </span>
             <ul class="dropdown-menu" id="select_language">
               <li>
-                <a
-                  class="portfolio_en dropdown-item"
-                  data-lang="en"
-                  data-detect="en"
-                  >영어</a
-                >
+                <a class="portfolio_en dropdown-item" data-lang="en">
+                  English
+                </a>
               </li>
               <li>
-                <a
-                  class="portfolio_ja dropdown-item"
-                  data-lang="ja"
-                  data-detect="ja"
-                  >일본어</a
-                >
+                <a class="portfolio_ja dropdown-item" data-lang="ja"
+                  >Japanese
+                </a>
               </li>
               <li>
-                <a
-                  class="portfolio_ko dropdown-item"
-                  data-lang="ko"
-                  data-detect="ko"
-                  >한국어</a
-                >
+                <a class="portfolio_ko dropdown-item" data-lang="ko"> Koean </a>
               </li>
             </ul>
           </div>
@@ -144,34 +135,21 @@
             </span>
             <ul class="dropdown-menu" id="select_language">
               <li>
-                <a
-                  class="portfolio_en dropdown-item"
-                  data-lang="en"
-                  data-detect="en"
-                  >영어</a
+                <a class="portfolio_en dropdown-item" data-lang="en">English</a>
+              </li>
+              <li>
+                <a class="portfolio_ja dropdown-item" data-lang="ja"
+                  >Japanese</a
                 >
               </li>
               <li>
-                <a
-                  class="portfolio_ja dropdown-item"
-                  data-lang="ja"
-                  data-detect="ja"
-                  >일본어</a
-                >
-              </li>
-              <li>
-                <a
-                  class="portfolio_ko dropdown-item"
-                  data-lang="ko"
-                  data-detect="ko"
-                  >한국어</a
-                >
+                <a class="portfolio_ko dropdown-item" data-lang="ko">Korean</a>
               </li>
             </ul>
           </div>
           <div class="form-check form-switch d-flex align-self-center">
             <input
-              class="portFolio_btn_mode portfolio_nav_content form-check-input"
+              class="portFolio_btn_mode portfolio_nav_content form-check-input pe-auto"
               type="checkbox"
             />
           </div>
@@ -189,16 +167,14 @@
         >
           전명규입니다.
         </div>
-        <pre data-detect="summary">
-저는 영어영문학을 전공한 백엔드 엔지니어입니다. 현재는 에이블 스쿨에서 머신러닝에 대해 공부하고 있습니다.</pre
-        >
+        <pre data-detect="summary"></pre>
         <div class="nav-item d-flex align-self-center">
           <a
             href="#"
             class="btn btn-lg btn-outline-primary my-5"
-            id="resume"
-            data-detect="resume"
-            >이력서는 여기를 클릭하세요.</a
+            id="email"
+            data-detect="mail_button"
+            >이메일로 포지션 제안하기</a
           >
         </div>
       </div>
@@ -227,14 +203,21 @@
             제 기술 스택은 다음과 같습니다.
           </pre>
           <ul>
-            <li><b>Server</b>: AWS, Docker</li>
-            <li><b>Database</b>: MySQL, PostgreSQL, SQLite, Redis</li>
             <li>
-              <b>Backend</b>: Spring, SpringBoot, Django, Express.js, Wordpress
+              <b>Language</b>: Java, Python, Node.js, JavaScript, HTML, CSS
             </li>
-            <li><b>Frontend</b>: HTML/CSS, SCSS, JavaScript, Bootstrap</li>
-            <li><b>GUI</b>: JavaFX</li>
-            <li><b>Machine Learning</b>: Tensorflow</li>
+            <li>
+              <b>Cloud</b>: AWS EC2, AWS RDS, Cloudflare Workers, Cloudflare R2
+            </li>
+            <li><b>Database</b>: SQLite, MySQL, PostgreSQL, MongoDB, Redis</li>
+            <li>
+              <b>Backend</b>: Spring Framework, Django, Express.js, Next.js
+            </li>
+            <li><b>Frontend</b>: React, Bootstrap, Tailwind CSS</li>
+            <li><b>CMS</b>: Wordpress</li>
+            <li>
+              <b>Data Science</b>: pandas, NumPy, scikit-learn, TensorFlow
+            </li>
           </ul>
         </div>
         <!-- desktop photo -->
@@ -598,6 +581,79 @@
           </div>
         </div>
 
+        <!-- Blog -->
+        <div class="portfolio_subsection row mx-auto">
+          <!-- desktop photo -->
+          <div class="d-md-block d-none col-md-7 d-md-flex align-items-center">
+            <img
+              class="portfolio_image_project border rounded"
+              src="./images/project/blog.png"
+              data-bs-toggle="modal"
+              data-bs-target="#modal"
+              style="max-width: 100%; height: auto"
+            />
+          </div>
+
+          <!-- description -->
+          <div class="col-md-5">
+            <div
+              class="text-start"
+              style="font-size: 20px"
+              data-detect="work_solo"
+            >
+              개인 프로젝트
+            </div>
+            <div class="portfolio_emphasis_font_small text-start">
+              mogumogu's sundries
+            </div>
+            <!-- mobile photo -->
+            <div class="d-md-none d-block">
+              <img
+                class="portfolio_image_project border rounded"
+                src="./images/project/blog.png"
+                data-bs-toggle="modal"
+                data-bs-target="#modal"
+                style="max-width: 100%; height: auto"
+              />
+            </div>
+            <div
+              class="border rounded my-3 p-3"
+              style="font-size: 25px"
+              data-detect="blog"
+            >
+              기존의 Wordpress 블로그에서 커스터마이징의 한계를 느끼고,
+              Next.js로 직접 구현한 블로그입니다. 한국어/일본어 다국어 처리를
+              지원하고 Markdown으로 포스트를 작성합니다.
+            </div>
+            <div style="font-size: 20px; line-height: 2.5">
+              <span class="border rounded p-1">Vercel</span>&nbsp;
+              <span class="border rounded p-1">Cloudflare R2</span>&nbsp;
+              <span class="border rounded p-1">MongoDB</span>&nbsp;
+              <span class="border rounded p-1">Next.js</span>&nbsp;
+              <span class="border rounded p-1">React</span>&nbsp;
+              <span class="border rounded p-1">Tailwind CSS</span>&nbsp;
+            </div>
+            <div class="text-md-start text-end">
+              <span
+                ><a
+                  href="https://github.com/foreverfl/web-my-study-materials"
+                  target="_blank"
+                  ><img
+                    class="portfolio_image_noun"
+                    src="./images/noun/light/github.png"
+                    width="30px" /></a></span
+              >&nbsp;
+              <span
+                ><a href="https://mogumogu.dev/" target="_blank"
+                  ><img
+                    class="portfolio_image_noun"
+                    src="./images/noun/light/external_link.png"
+                    width="30px" /></a></span
+              >&nbsp;
+            </div>
+          </div>
+        </div>
+
         <div class="portfolio_emphasis_font">(2) GUI Programming</div>
         <!-- Manage Words -->
         <div class="portfolio_subsection row mx-auto">
@@ -751,7 +807,10 @@
           src="./images/noun/light/insta.png"
           style="width: 30px"
       /></a>
-      <a class="py-md-2 mx-md-0 mx-3" href="#" target="_blank"
+      <a
+        class="py-md-2 mx-md-0 mx-3"
+        href="https://mogumogu.dev/"
+        target="_blank"
         ><img
           class="portfolio_image_noun"
           src="./images/noun/light/vercel.png"
@@ -761,7 +820,7 @@
 
     <!-- Footer -->
     <div class="text-secondary text-center mb-5" style="font-size: 25px">
-      Designed & Built by Myeongkyu Jeon
+      Designed & Built by Myeongkyu Jeon. All rights reserved.
     </div>
 
     <!-- Modal Photo -->
@@ -786,21 +845,6 @@
   <script type="text/javascript" src="./js/i18n.js"></script>
   <script type="text/javascript" src="./js/convertTheme.js"></script>
   <script>
-    showResume();
-    function showResume() {
-      const resume = document.querySelector("#resume");
-
-      resume.addEventListener("click", function () {
-        if (localStorage.getItem("language") === "en") {
-          alert("My English resume is not yet ready");
-        } else if (localStorage.getItem("language") === "ja") {
-          alert("現在準備中におります。");
-        } else if (localStorage.getItem("language") == "ko") {
-          alert("현재 준비중에 있습니다.");
-        }
-      });
-    }
-
     addNavbarEvent();
     function addNavbarEvent() {
       const headers = document.querySelectorAll("header");
