@@ -134,3 +134,12 @@ pre {
     bottom: auto;
   }
 }
+
+/* images */
+.portfolio_image_noun:hover path {
+  fill: #0d6efd; /* 호버 시 색상 변경 */
+}
+
+.portfolio_image_noun:hover {
+  transform: scale(1.3); /* 호버 시 크기 확대 */
+}
