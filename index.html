@@ -204,7 +204,7 @@
           </pre>
           <ul>
             <li>
-              <b>Language</b>: Java, Python, Node.js, JavaScript, HTML, CSS
+              <b>Language</b>: Java, Python, JavaScript, TypeScript, HTML, CSS
             </li>
             <li>
               <b>Cloud</b>: AWS EC2, AWS RDS, Cloudflare Workers, Cloudflare R2,
@@ -212,7 +212,8 @@
             </li>
             <li><b>Database</b>: SQLite, MySQL, PostgreSQL, MongoDB, Redis</li>
             <li>
-              <b>Backend</b>: Spring Framework, Django, Express.js, Next.js
+              <b>Backend</b>: Spring Framework, Express.js, Next.js, Django,
+              FastAPI
             </li>
             <li><b>Frontend</b>: React, Bootstrap, Tailwind CSS</li>
             <li><b>CMS</b>: Wordpress</li>
@@ -246,6 +247,16 @@
           <div
             class="portfolio_experience_title col my-3 d-flex justify-content-between"
             type="button"
+            id="btn_ktcs_mobile"
+          >
+            <span data-detect="ktcs">KT cs</span>
+            <span class="text-secondary" style="font-size: 20px"
+              >2024. 4 ~ now</span
+            >
+          </div>
+          <div
+            class="portfolio_experience_title col my-3 d-flex justify-content-between"
+            type="button"
             id="btn_rokaf_mobile"
           >
             <span data-detect="rokaf">대한민국 공군</span>
@@ -271,6 +282,15 @@
           style="font-size: 20px"
         >
           <div class="fw-bold" data-detect="development">개발직</div>
+          <div
+            class="portfolio_experience_title my-3"
+            type="button"
+            data-detect="ktcs"
+            id="btn_ktcs"
+            style="width: 60%"
+          >
+            KT cs
+          </div>
           <hr style="width: 60%" />
           <div class="fw-bold" data-detect="not_development">비개발직</div>
           <div
@@ -293,8 +313,48 @@
         </div>
 
         <div class="col-md-9">
+          <!-- ktcs -->
+          <div class="portfolio_experience" id="ktcs">
+            <!-- title -->
+            <div class="fw-bold">
+              <span data-detect="ktcs_career">풀스택 엔지니어</span>&nbsp;<span
+                class="text-primary"
+                data-detect="ktcs_at"
+                >@ KT cs</span
+              >
+            </div>
+            <!-- period -->
+            <div
+              class="d-md-block d-none text-secondary"
+              style="font-size: 20px"
+            >
+              2024. 4 ~ now
+            </div>
+            <!-- work -->
+            <ul>
+              <li
+                style="list-style-type: circle; font-size: 25px"
+                data-detect="ktcs_work_1"
+              >
+                Spring Framework를 활용한 백엔드 개발
+              </li>
+              <li
+                style="list-style-type: circle; font-size: 25px"
+                data-detect="ktcs_work_2"
+              >
+                React를 활용한 프론트엔드 개발
+              </li>
+              <li
+                style="list-style-type: circle; font-size: 25px"
+                data-detect="ktcs_work_3"
+              >
+                Thymeleaf 및 Jquery를 활용한 프론트엔드 개발
+              </li>
+            </ul>
+          </div>
+
           <!-- rokaf -->
-          <div class="portfolio_experience" id="rokaf">
+          <div class="portfolio_experience" id="rokaf" style="display: none">
             <!-- title -->
             <div class="fw-bold">
               <span data-detect="rokaf_career">기지중대장/작전통제장교</span
@@ -373,11 +433,15 @@
           </div>
         </div>
       </div>
+      <!-- 3. work project -->
 
-      <!-- 3. work -->
+      <!-- 4. personal project -->
       <div class="portfolio_section row" id="03_work">
-        <div class="portfolio_emphasis_font fw-bold my-3" data-detect="work">
-          03. 프로젝트
+        <div
+          class="portfolio_emphasis_font fw-bold my-3"
+          data-detect="personal_project"
+        >
+          04. 개인 프로젝트
         </div>
         <div class="portfolio_emphasis_font">(1) Web Programming</div>
 
@@ -930,6 +994,24 @@
       const portfolioExperience = document.querySelectorAll(
         ".portfolio_experience"
       );
+      const btnKtcs = document.querySelector("#btn_ktcs");
+      const btnKtcsMobile = document.querySelector("#btn_ktcs_mobile");
+      const ktcs = document.querySelector("#ktcs");
+
+      btnKtcs.addEventListener("click", function () {
+        for (let i = 0; i < portfolioExperience.length; i++) {
+          portfolioExperience[i].style.display = "none";
+        }
+        ktcs.style.display = "block";
+      });
+
+      btnKtcsMobile.addEventListener("click", function () {
+        for (let i = 0; i < portfolioExperience.length; i++) {
+          portfolioExperience[i].style.display = "none";
+        }
+        ktcs.style.display = "block";
+      });
+
       const btnRokaf = document.querySelector("#btn_rokaf");
       const btnRokafMobile = document.querySelector("#btn_rokaf_mobile");
       const rokaf = document.querySelector("#rokaf");

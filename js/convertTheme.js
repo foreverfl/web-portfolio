@@ -61,7 +61,6 @@ function toDarkTheme() {
 
     headerMobile.classList.add('navbar-dark');
 
-    console.log(portfolioImageNouns[0]);
     // images
     for (let i = 0; i < portfolioImageNouns.length; i++) {
         portfolioImageNouns[i].querySelector('path').setAttribute('fill', 'white');
@@ -90,7 +89,6 @@ function toLightTheme() {
 
     headerMobile.classList.remove('navbar-dark');
 
-    console.log(portfolioImageNouns[0]);
     // images
     for (let i = 0; i < portfolioImageNouns.length; i++) {
         portfolioImageNouns[i].querySelector('path').setAttribute('fill', 'black');
